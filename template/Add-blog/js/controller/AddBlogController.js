@@ -29,9 +29,9 @@ function AddBlogController($firebaseObject, $firebaseArray, $firebaseAuth, $root
 		
 		$firebaseAuth().$onAuthStateChanged(function(authData) {
 			if (authData) {
-				if(authData.uid != "c1QDdN6PkXVJIggZDHt8wTVHnyp2"){
-					$location.path('/');
-				}
+				// if(authData.uid != "c1QDdN6PkXVJIggZDHt8wTVHnyp2"){
+				// 	$location.path('/');
+				// }
 				$rootScope.isLoggedIn = true;
 			}
 			else {
