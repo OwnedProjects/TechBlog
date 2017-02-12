@@ -1,0 +1,22 @@
+.Allblogs .blog-box{
+	border: 1px solid #ddd;
+	padding: 10px;
+	cursor:pointer;
+	position: relative;
+}
+
+.Allblogs .deleteBlog{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	padding: 5px;
+	background: #ed143d;
+	z-index: 10;
+}
+
+.Allblogs .blogWrapper{
+	background: #6495ed;
+    float: left;
+    width: 100%;
+    padding: 10px;
+}

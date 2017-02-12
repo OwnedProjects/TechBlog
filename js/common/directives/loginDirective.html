@@ -1,0 +1,12 @@
+<h5 class="text-primary"><br/>
+    <span ng-if="isLoggedIn">
+        <a href="javascript:void(0);" ng-click="loginCtrl.logout()">
+            <i class="fa fa-sign-out"></i> Logout
+        </a>
+    </span> 
+    <span ng-if="!isLoggedIn">
+        <a href="javascript:void(0)" ng-click="loginCtrl.login()">
+            <i class="fa fa-sign-in"></i> Login
+        </a>
+    </span>
+</h5>

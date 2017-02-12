@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="GitBlog">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="icon" href="favicon.ico">
+
+		<title>My Blog</title>
+
+		<link href="css/bootstrap.min.css" rel="stylesheet" />
+		<link href="css/font-awesome.min.css" rel="stylesheet" />
+		<link href="css/signin.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+		<link href="template/All-blogs/css/style.css" rel="stylesheet" />
+		<link href="template/blog-dets/css/style.css" rel="stylesheet" />
+		
+		<script src="js/libs/angular.min.js"></script>
+		<script src="js/libs/angular-route.min.js"></script>
+		<script src="js/libs/firebase.min.js"></script>
+		<script src="js/libs/angular-fire.min.js"></script>
+		<script src="js/libs/angular-animate.min.js"></script>
+		<script src="js/libs/angular-sanitize.min.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/common/service/PopUp.js"></script>
+		<script src="js/common/service/userservice.js"></script>
+		<script src="js/common/directives/loginDirective.js"></script>
+		<script src="js/common/controllers/NavController.js"></script>
+		<script src="template/Login/js/controller/LoginController.js"></script>
+		<script src="template/Add-blog/js/controller/AddBlogController.js"></script>
+		<script src="template/All-blogs/js/controller/AllBlogController.js"></script>
+		<script src="template/Blog-dets/js/controller/BlogDetsController.js"></script>
+		
+	</head>
+
+<body>
+	<ng-view></ng-view>
+	
+	<div class="overlay">
+		<div class="overlay-success overlay-popup" ng-if="successMessage">
+			<i class="fa fa-check"></i> {{successMessage}}</div>
+		<div class="overlay-error overlay-popup" ng-if="errorMessage"><i class="fa fa-exclamation"></i> {{errorMessage}}</div>
+	</div>
+</body>
+</html>

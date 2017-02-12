@@ -1,0 +1,14 @@
+<div class="container sign-in">
+
+<!-- Splash screen -->
+<section id="page-splash">
+    <h2>Welcome to My Blog</h2>
+    <div class="align-center">
+      <button id="sign-in-button" class="btn btn-info" ng-click="loginctrl.doLogin();" ng-disabled="loginctrl.loader">
+					<i class="fa fa-user-circle"></i> Sign in with Google
+			</button><br/><br/>
+			<span ng-if="loginctrl.loader"><i class="fa fa-spinner fa-pulse"></i> Checking login...</span>
+    </div>
+</section>
+	
+</div> <!-- /container -->
