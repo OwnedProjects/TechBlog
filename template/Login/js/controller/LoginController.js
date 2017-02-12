@@ -14,9 +14,6 @@ function LoginController($firebaseObject, $rootScope, PopUp, $location, UserServ
 	
 	function init(){
 		try{
-			var rootRef = firebase.database().ref().child('/user-master');
-			var ref = rootRef.child('/user');
-			vm.userData = $firebaseObject(ref);
 			firebase.auth().onAuthStateChanged(vm.onAuthStateChanged);
 		}
 		catch(ex){
