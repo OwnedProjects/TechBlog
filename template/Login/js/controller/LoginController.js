@@ -34,12 +34,12 @@ function LoginController($firebaseObject, $rootScope, PopUp, $location, UserServ
 			PopUp.success("Login Successful", 3000);
 			UserService.setUser();
 			vm.loader = null;
-			if(user.uid == "c1QDdN6PkXVJIggZDHt8wTVHnyp2"){
-				$location.path('addblog');
-			}
-			else{
-				$location.path('allblog');	
-			}
+			// if(user.uid == "c1QDdN6PkXVJIggZDHt8wTVHnyp2"){
+			 	$location.path('addblog');
+			// }
+			// else{
+				//$location.path('allblog');	
+			// }
 			//writeUserData(user.uid, user.displayName, user.email, user.photoURL);
 			//startDatabaseQueries();
 		} else {
