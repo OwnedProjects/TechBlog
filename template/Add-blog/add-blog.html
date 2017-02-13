@@ -12,20 +12,6 @@
 <button class="btn btn-sm btn-primary" ng-click="addctrl.addPost()" ng-disabled="!addctrl.blogtitle || !addctrl.blogdata || !addctrl.blogtags">Add Blog</button>
 </div>
 
-<div class='col-md-3'>
-<strong class="text-info"><i class="fa fa-upload"></i> <u>Upload Images</u></strong><br/><br/>
-<button class="btn btn-sm btn-info" ng-click="addctrl.uploadPopUp=true"><i class="fa fa-upload"></i> Upload</button>
-<br/><br/>
-<div class="list-group" ng-if="addctrl.linkRefs.length>0">
-	<a href="javascript:void(0);" class="list-group-item active">
-	  Uploaded Images
-	</a>
-	<a href="javascript:void(0);" class="list-group-item" ng-repeat="link in addctrl.linkRefs" title="click to get URL" ng-click="addctrl.getImageURL(link)">
-		{{link}}
-	</a>
-</div>
-</div>
-
 </div>
 <br/>
 

@@ -13,8 +13,8 @@ function AddBlogController($firebaseObject, $firebaseArray, $firebaseAuth, $root
 	vm.uploadPopUp = null;
 	vm.init = init;
 	vm.addPost = addPost;
-	vm.image_upload = image_upload;
 	vm.getImageURL = getImageURL;
+	vm.onAuthStateChanged = onAuthStateChanged;
 
 	function init(){
 		vm.rootRef = null;
@@ -27,32 +27,25 @@ function AddBlogController($firebaseObject, $firebaseArray, $firebaseAuth, $root
 		vm.blogtags = null;
 		vm.linkRefs = new Array();
 		
-		$firebaseAuth().$onAuthStateChanged(function(authData) {
-			if (authData) {
-				// if(authData.uid != "c1QDdN6PkXVJIggZDHt8wTVHnyp2"){
-				// 	$location.path('/');
-				// }
-				$rootScope.isLoggedIn = true;
-			}
-			else {
-				$rootScope.isLoggedIn = false;
-			}
-		});
-		
-		if($rootScope.isLoggedIn){
+		$firebaseAuth().$onAuthStateChanged(vm.onAuthStateChanged);
+	};
+
+	function onAuthStateChanged(authData) {
+		if (authData) {
 			vm.rootRef = firebase.database().ref().child('/blog-post');
 			vm.blogs = $firebaseArray(vm.rootRef);
 			vm.rootRefBlogLinks = firebase.database().ref().child('/blog-links');
 			vm.bloglinks = $firebaseArray(vm.rootRefBlogLinks);
-			vm.image_upload();
 		}
-		else{
-			$location.path('/login');
+		else {
+			console.log("jump to login");
+			//$rootScope.isLoggedIn = false;
+			//$location.path('/login');
 		}
 	};
 
 	function addPost(){
-		var titleLink = vm.blogtitle.split(" ").join("-");
+		var titleLink = vm.blogtitle.toLowerCase().split(" ").join("-");
 		var dt = new Date();
 		var postData = {
 			"bloglink":titleLink,
@@ -72,43 +65,6 @@ function AddBlogController($firebaseObject, $firebaseArray, $firebaseAuth, $root
 		PopUp.success("Post added successfully. Add blog page re-initialized");
 		vm.init();
 		// Write the new post's data simultaneously in the posts list and the user's post list.
-	};
-
-	function image_upload(){
-		var uploader = document.getElementById('uploader');
-		var fileButton = document.getElementById('fileButton');
-
-		fileButton.addEventListener('change', function(e){
-			//Get file
-			var file = e.target.files[0];
-
-			//Create a storage ref
-			var dt = new Date();
-			var storageRef = firebase.storage().ref(dt.getTime() + file.name);
-
-			//Upload file
-			var task = storageRef.put(file);
-
-			//Update progress bar
-			task.on('state_changed',
-				function progress(snapshot) {
-					var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-					uploader.value = percentage;
-				},
-				function error(err) {
-					console.log(err)
-				},
-				function complete() {
-					vm.linkRefs.push(dt.getTime() + file.name);
-					vm.uploadPopUp = null;
-					$timeout(function(){
-						console.log("Pop Up");
-						PopUp.success("Image upload success");
-					},100)
-					console.log("completed")
-				}
-			);
-		});
 	};
 
 	function getImageURL(imgLink){

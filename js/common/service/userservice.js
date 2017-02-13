@@ -1,22 +1,20 @@
 angular.module("GitBlog")
 	.service("UserService", UserService);
 
-UserService.$inject = ["$rootScope"];
+UserService.$inject = ["$firebaseArray","$rootScope", "$q"];
 
-function UserService($rootScope){
+function UserService($firebaseArray, $rootScope, $q){
 	var vm = this;
 	vm.validUser = null;
 	vm.checkUser = checkUser;
 	vm.setUser = setUser;
 	
-	function checkUser(){
-		if(sessionStorage.getItem("validUser")){
-			vm.validUser = sessionStorage.getItem("validUser");
-			return vm.validUser;
-		}
-		else{
-			return vm.validUser;
-		}
+	function checkUser(user, currUsrId){
+		return $q(function(resolve, reject) {
+			vm.findUserRootRef = firebase.database().ref().child('/users').orderByChild('uid').equalTo(currUsrId);
+			vm.isUser = $firebaseArray(vm.findUserRootRef);
+			resolve(vm.isUser)
+		});
 	}
 	
 	function setUser(){
