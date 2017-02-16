@@ -1,0 +1,35 @@
+x/* font sizes */
+.fs10{font-size:10px;}.fs11{font-size:11px;}.fs12{font-size:12px;}.fs13{font-size:13px;}.fs14{font-size:14px;}.fs15{font-size:15px;}.fs16{font-size:16px;}.fs17{font-size:17px;}.fs18{font-size:18px;}.fs19{font-size:19px;}.fs20{font-size:20px;}.fs30{font-size:30px;}
+.fs40{font-size: 40px;}.fs50{font-size: 50px;}.fs60{font-size: 60px;}.fs70{font-size: 70px;}.fs80{font-size: 80px;}.fs90{font-size: 90px;}.fs100{font-size: 100px;}.fs110{font-size: 110px;}.fs120{font-size: 120px;}.fs45{font-size: 40px;}.fs55{font-size: 50px;}.fs65{font-size: 60px;}.fs75{font-size: 70px;}.fs85{font-size:80px;}.fs95{font-size: 90px;}.fs105{font-size: 100px;}.fs115{font-size: 110px;}.fs125{font-size: 120px;}
+
+/* common margin-top */
+.mt10{margin-top:10px;}.mt20{margin-top:20px;}.mt30{margin-top:30px;}.mt40{margin-top:40px;}.mt50{margin-top:50px;}.mt60{margin-top:60px;}.mt70{margin-top:70px;}.mt80{margin-top:80px;}.mt90{margin-top:90px;}.mt15{margin-top:15px;}.mt25{margin-top:25px;}.mt35{margin-top:35px;}.mt45{margin-top:45px;}.mt55{margin-top:55px;}.mt65{margin-top:65px;}.mt75{margin-top:75px;}.mt85{margin-top:85px;}.mt95{margin-top:95px;}
+/* common margin-bottom*/
+.mb10{margin-bottom:10px;}.mb20{margin-bottom:20px;}.mb30{margin-bottom:30px;}.mb40{margin-bottom:40px;}.mb50{margin-bottom:50px;}.mb60{margin-bottom:60px;}.mb70{margin-bottom:70px;}.mb80{margin-bottom:80px;}.mb90{margin-bottom:90px;}.mb15{margin-bottom:15px;}mb25{margin-bottom:25px;}.mb35{margin-bottom:35px;}.mb45{margin-bottom:45px;}.mb55{margin-bottom:55px;}.mb65{margin-bottom:65px;}.mb75{margin-bottom:75px;}.mb85{margin-bottom:85px;}.mb95{margin-bottom:95px;}
+
+/* text color */
+.text-white{color: #fff;}
+.text-green{color: #33cc99;}
+.text-orange{color: #ffb03e;}
+.text-blue{color: #0093BA;}
+.text-red{color: #e65656;}
+
+a, a:hover, button{color: #000;text-decoration: none; transition: all 0.2s ease-in-out 0.2s;}
+p{font-size: 16px;}
+body{font-family: 'brandon_grotesque_regularRg'; font-size: 12px;background:#ecf0f1;}
+
+/* Navigation star */
+.navbar-techBlog{color:#fff;min-height:inherit; height:auto; background: #0280c8; border:none; border-bottom: solid 2px #d7d7d7;border-radius: 0;margin-bottom: 0;}
+.navbar-techBlog .navbar-brand{color: #fff;text-transform: uppercase;font-family: 'brandon_grotesquemedium';}
+.navbar-techBlog .navbar-brand:focus, .navbar-techBlog .navbar-brand:hover{color: rgba(255,255,255, .6)}
+.navbar-techBlog .navbar-brand span{ margin-left: -2px; vertical-align: top; display: inline-block; margin-top: -2px;}
+.navbar-techBlog .navbar-nav>.active>a, .navbar-techBlog .navbar-nav>li>a{color:rgba(255,255,255, 0.60); padding: 5px 10px;text-transform: uppercase;}
+.navbar-techBlog .navbar-nav{margin: 10px 0;}
+.navbar-techBlog .navbar-nav>.active>a, 
+.navbar-techBlog .navbar-nav>.active>a:focus, 
+.navbar-techBlog .navbar-nav>.active>a:hover,
+.navbar-techBlog .navbar-nav>li>a:focus, 
+.navbar-techBlog .navbar-nav>li>a:hover{color:#fff; background: rgba(255,255,255, 0.24); border-radius: 2px;}
+.icon {margin-right: 5px;}
+.navbar-techBlog .navbar-nav>li{margin: 0 7px;}
+/* Navigation end */

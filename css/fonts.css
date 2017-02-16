@@ -1,0 +1,11 @@
+/*FONT FACE**/
+@font-face { font-family: 'brandon_grotesquebold'; src: url('../fonts/brandon_bld-webfont.woff2') format('woff2'), url('../fonts/brandon_bld-webfont.woff') format('woff'); font-weight: normal; font-style: normal;}
+@font-face { font-family: 'brandon_grotesqueblack'; src: url('../fonts/brandon_blk-webfont.woff2') format('woff2'), url('../fonts/brandon_blk-webfont.woff') format('woff'); font-weight: normal; font-style: normal;}
+@font-face { font-family: 'brandon_grotesquelight'; src: url('../fonts/brandon_light-webfont.woff2') format('woff2'), url('../fonts/brandon_light-webfont.woff') format('woff'); font-weight: normal; font-style: normal;}
+@font-face { font-family: 'brandon_grotesquemedium'; src: url('../fonts/brandon_med-webfont.woff2') format('woff2'),  url('../fonts/brandon_med-webfont.woff') format('woff'); font-weight: normal; font-style: normal;}
+@font-face { font-family: 'brandon_grotesque_regularRg'; src: url('../fonts/brandon_reg-webfont.woff2') format('woff2'), url('../fonts/brandon_reg-webfont.woff') format('woff'); font-weight: normal;
+ font-style: normal;}
+@font-face { font-family: 'brandon_grotesquethin'; src: url('../fonts/brandon_thin-webfont.woff2') format('woff2'), url('../fonts/brandon_thin-webfont.woff') format('woff'); font-weight: normal; font-style: normal;}
+@font-face { font-family: 'reservation_widebold'; src: url('../fonts/reservation_wide_bold-webfont.woff2') format('woff2'), url('../fonts/reservation_wide_bold-webfont.woff') format('woff'); font-weight: normal; font-style: normal;}
+@font-face { font-family: 'reservation_wideregular'; src: url('../fonts/reservationwide-regular-webfont.woff2') format('woff2'), url('../fonts/reservationwide-regular-webfont.woff') format('woff'); font-weight: normal; font-style: normal;}
+/*FONT FACE END**/

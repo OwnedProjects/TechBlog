@@ -1,0 +1,19 @@
+.ta-editor {
+    min-height: 300px;
+    height: auto;
+    overflow: auto;
+    font-family: inherit;
+    font-size: 100%;
+    margin: 20px 0;
+}
+.add-blog-cnt{padding: 20px;background: #fff; -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.4);
+    box-shadow: 0 1px 1px rgba(0,0,0,0.4);border-radius: 5px;}
+
+form.addBlog-form label{font-size: 18px; text-transform: uppercase;font-family: 'brandon_grotesquelight'; margin-bottom: 0;font-family: 'Roboto', sans-serif;}
+
+form.addBlog-form .form-control{border: none;background: none;box-shadow: none;border-radius: 0;border-bottom: solid 1px #d7d7d7;padding-left: 0;font-size: 18px; }
+form.addBlog-form textarea.form-control{min-height: 200px;resize: none;}
+
+form.addBlog-form .form-control:focus{border-bottom: solid 2px #0280c8;}
+.addBlog{font-size: 18px; float:right;font-family: 'Roboto', sans-serif;color:#fff;background: #d7d7d7; border: none; border-radius: 0;padding: 10px 25px;}
+.addBlog:focus, .addBlog:hover{background: #0280c8;}

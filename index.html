@@ -1,0 +1,51 @@
+<html ng-app="TechBlog">
+
+<head>
+	<title>login Application</title>
+	<link rel="icon" href="TechBlog-icon.ico" type="image/x-icon" />
+
+	<link href="css/bootstrap.min.css" rel="stylesheet" />
+	<link href="css/font-awesome.min.css" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+	<link href="css/textAngular.css" rel="stylesheet">
+	<link href="css/fonts.css" rel="stylesheet" />
+	<link href="css/style.css" rel="stylesheet" />
+
+	<link href="template/login/css/login.css" rel="stylesheet" />
+	<link href="template/All-blogs/css/allblogs.css" rel="stylesheet" />
+	<link href="template/Add-blog/css/addblog.css" rel="stylesheet" />
+
+	<script src="js/libs/angular.min.js"></script>
+	<script src="js/libs/angular-route.min.js"></script>
+	<script src="js/libs/angular-animate.min.js"></script>
+	<script src='js/libs/textAngular-rangy.min.js'></script>
+	<script src='js/libs//textAngular-sanitize.min.js'></script>
+	<script src='js/libs/textAngular.min.js'></script>
+	<script src="js/app.js"></script>
+	<script src="template/login/js/controller/LoginController.js"></script>
+	<script src="template/All-blogs/js/controller/AllBlogController.js"></script>
+	<script src="template/Add-blog/js/controller/AddBlogController.js"></script>
+
+</head>
+
+<body>
+	<header>
+		<nav class="navbar navbar-default navbar-techBlog">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#/">Tech-Blog <span>></span></a>
+				</div>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="active"><a href="#/allblog"><i class="icon fa fa-list-alt fa-lg"></i>All Blogs</a></li>
+					<li><a href="#/addblog"><i class="icon fa fa-commenting fa-lg"></i> Add Blog</a></li>
+					<li><a href="#"><i class="icon fa  fa-info-circle fa-lg"></i> Blog Details</a></li>
+					<li><a href="#"><i class="icon fa fa-power-off fa-lg"></i> Logout</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	<ng-view></ng-view>
+</body>
+
+</html>
