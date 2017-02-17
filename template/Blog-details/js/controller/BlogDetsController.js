@@ -1,15 +1,16 @@
 angular.module("TechBlog")
-	.controller("BlogDetsController", LoginController);
+	.controller("BlogDetsController", BlogDetsController);
 
 function BlogDetsController(){
     var vm = this;
     vm.showcommentSection = false;
-
-    vm.init = function(){
-        alert('loading');
+    vm.togglecommentSection = togglecommentSection;
+    vm.init = init;
+    
+    function init(){
     }
 
-    vm.togglecommentSection = function(){
+    function togglecommentSection (){
         alert('sdfsd');
         vm.showcommentSection = vm.showcommentSection === false ? true: false;
     }
