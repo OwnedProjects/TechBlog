@@ -17,6 +17,11 @@ angular.module("TechBlog", ["ngRoute"])
 			controller: "AllBlogController",
 			controllerAs: "allblogctrl"
 		  }).
+		  when("/blogdetails", {
+			templateUrl: 'template/Blog-details/BlogDetails.html',
+			controller: "BlogDetsController",
+			controllerAs: "blogDetsCtrl"
+		  }).
 		  otherwise({
 			redirectTo: "/login"
 		  });

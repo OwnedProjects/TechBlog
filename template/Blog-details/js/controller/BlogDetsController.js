@@ -1,6 +1,18 @@
 angular.module("TechBlog")
-	.controller("AddBlogController", LoginController);
+	.controller("BlogDetsController", LoginController);
 
-function AddBlogController(){
+function BlogDetsController(){
     var vm = this;
+    vm.showcommentSection = false;
+
+    vm.init = function(){
+        alert('loading');
+    }
+
+    vm.togglecommentSection = function(){
+        alert('sdfsd');
+        vm.showcommentSection = vm.showcommentSection === false ? true: false;
+    }
+    
+    vm.init();
 }
