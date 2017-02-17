@@ -9,7 +9,7 @@
 .add-blog-cnt{padding: 20px;background: #fff; -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.4);
     box-shadow: 0 1px 1px rgba(0,0,0,0.4);border-radius: 5px;}
 
-form.addBlog-form label{font-size: 18px; text-transform: uppercase;font-family: 'brandon_grotesquelight'; margin-bottom: 0;font-family: 'Roboto', sans-serif;}
+form.addBlog-form label{font-size: 14px;font-family: 'brandon_grotesquelight'; margin-bottom: 0;font-family: 'Roboto', sans-serif;}
 
 form.addBlog-form .form-control{border: none;background: none;box-shadow: none;border-radius: 0;border-bottom: solid 1px #d7d7d7;padding-left: 0;font-size: 18px; }
 form.addBlog-form textarea.form-control{min-height: 200px;resize: none;}
@@ -17,3 +17,12 @@ form.addBlog-form textarea.form-control{min-height: 200px;resize: none;}
 form.addBlog-form .form-control:focus{border-bottom: solid 2px #0280c8;}
 .addBlog{font-size: 18px; float:right;font-family: 'Roboto', sans-serif;color:#fff;background: #d7d7d7; border: none; border-radius: 0;padding: 10px 25px;}
 .addBlog:focus, .addBlog:hover{background: #0280c8;}
+
+.instruction{padding: 15px 15px 10px 15px;font-size: 14px;margin-bottom: 1.5em;background: rgba(241, 196, 15, 0.2);border-radius: 0;border-color: rgba(241, 196, 15, 0.23);transition: display 3s ease-in-out 2s;}
+.instruction h4{color:#333;font-family: 'brandon_grotesquemedium';font-size: 20px;}
+.instruction ul{padding-left:20px;list-style-type: square;}
+.instruction ul li{color:#000;line-height: 30px;font-family:'brandon_grotesquelight';font-size: 16px; text-transform: initial;}
+.instruction ul li i.fa{margin-right: 10px;}
+
+/**/
+#Title:hover div#titleInstruction{display: block}
