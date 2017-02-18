@@ -9,6 +9,7 @@ function AddBlogController($rootScope){
     vm.showFormatInst = false;
     vm.showTagInst = false;
     vm.init = init;
+    vm.createNewBlog = createNewBlog;
 
     function init(){
         $rootScope.setActiveMenu();
@@ -21,5 +22,8 @@ function AddBlogController($rootScope){
         a = true;
     }
 
+    function createNewBlog(){
+        console.log(vm.blogTitle, vm.content)
+    }
     vm.init();
 }
