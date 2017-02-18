@@ -1,4 +1,15 @@
-angular.module("TechBlog", ["ngRoute", "textAngular"])    
+angular.module("TechBlog", ["ngRoute", "textAngular", "firebase"])
+	.run(["$rootScope", function($rootScope){
+		  // Initialize Firebase
+			var config = {
+				apiKey: "AIzaSyBeNnqTYLjAaMfbldZqjmMXOdKWrG1CKek",
+				authDomain: "techblog-4bb01.firebaseapp.com",
+				databaseURL: "https://techblog-4bb01.firebaseio.com",
+				storageBucket: "techblog-4bb01.appspot.com",
+				messagingSenderId: "435978073211"
+			};
+			firebase.initializeApp(config);
+	}])    
 	.config(["$routeProvider",
 		function($routeProvider) {
 		$routeProvider.

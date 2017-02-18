@@ -1,6 +1,15 @@
 angular.module("TechBlog")
 	.controller("AllBlogController", AllBlogController);
 
-function AllBlogController(){
+AllBlogController.$inject = ["$rootScope", "$location"];
+
+function AllBlogController($rootScope, $location){
     var vm = this;
+    vm.init = init;
+
+    function init(){
+        
+    };
+
+    vm.init();
 }
