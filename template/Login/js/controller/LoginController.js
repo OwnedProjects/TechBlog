@@ -16,7 +16,7 @@ function LoginController($firebaseArray, $location, $rootScope, $timeout){
     function onAuthStateChanged(user){
         if(user){
             //vm.currentUID = user.uid;
-            //$rootScope.user = user;
+            $rootScope.user = user;
              $timeout(function(){
                 $location.path("/allblog");
             },500);

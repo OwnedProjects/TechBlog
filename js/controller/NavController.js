@@ -11,6 +11,9 @@ function NavController($rootScope, $location){
     $rootScope.setActiveMenu = setActiveMenu;
 
     function init(){
+        if(!$rootScope.user){
+            $location.path('/');
+        }
         console.log("NavController");
         $rootScope.setActiveMenu();
     };
