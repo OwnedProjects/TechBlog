@@ -14,7 +14,7 @@ pre{border: none;border-radius: 0;}
 hr.blog-line{margin: 0px 0 10px;}
 .add-comment-cnt{margin-top: 40px;}
 /* add-comment-form */
-form.add-comment-form label{font-size: 24px;font-weight:100;margin-bottom: 0;font-family: 'Roboto', sans-serif; position: absolute; top: 0;transition: all 0.2s ease-in-out 0.02s;color:#d7d7d7;}
+form.add-comment-form label{font-size: 20px;font-weight:100;margin-bottom: 0;font-family: 'Roboto', sans-serif; position: absolute; top: 0;transition: all 0.2s ease-in-out 0.02s;color:#d7d7d7;}
 form.add-comment-form .form-control{border: none;background: none;box-shadow: none;border-radius: 0;border-bottom: solid 1px #d7d7d7;padding-left: 0;font-size: 18px; }
 form.add-comment-form textarea.form-control{min-height: 200px;resize: none;}
 
@@ -28,3 +28,41 @@ form.add-comment-form .form-control:focus{border-bottom: solid 2px #0280c8;}
 .instruction ul li{color:#000;line-height: 30px;font-family:'brandon_grotesquelight';font-size: 16px; text-transform: initial;}
 .instruction ul li i.fa{margin-right: 10px;}
 .add-comment-form label.active{top: -30px; color: #333;}
+
+/*comment section*/
+.comment-cnt{position: relative;}
+.comment-cnt .thumbnail{position:absolute; left: 0; top: 0; width: 40px; height: 40px;border-radius: 50%;padding: 0;}
+.comment-cnt .panel.panel-default{margin-left: 65px;}
+.comment-cnt .panel {
+	position:relative;
+    border: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    border-radius: 0;
+    background: #f7f7f7;
+}
+.comment-cnt .panel-heading{background: #f7f7f7;border-color: transparent;border-radius: 0;}
+/*.panel>.panel-heading:after,.panel>.panel-heading:before{
+	position:absolute;
+	top:-2px;left:-40px;
+	right:100%;
+	width:0;
+	height:0;
+	display:block;
+	content:" ";
+	border-color:transparent;
+	border-style:solid solid outset;
+	pointer-events:none;
+}
+.panel>.panel-heading:after{
+	border-width:20px;
+	border-right-color:#f7f7f7;
+	margin-top:1px;
+	margin-left:2px;
+}
+.panel>.panel-heading:before{
+    border-right-color: #ddd;
+    border-width: 20px;
+    left: -39px;
+    top: 0px;
+}*/
