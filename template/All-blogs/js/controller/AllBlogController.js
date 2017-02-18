@@ -27,11 +27,6 @@ function AllBlogController($firebaseArray, $rootScope, $location){
                     .orderByChild('uid')
                     .equalTo(vm.currentUID)
                     .once('value')
-
-            console.log(vm.currentUID);
-            vm.findUserRootRef = firebase.database().ref().child('/users').orderByChild('uid').equalTo(vm.currentUID).once('value')
-            console.log(vm.currentUID);
-            vm.findUserRootRef = firebase.database().ref().child('/users').orderByChild('uid').equalTo(vm.currentUID).once('value')
             .then(function(snapshot){
                 if(snapshot.val() != null){
                    //console.log(snapshot.val());
