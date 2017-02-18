@@ -15,7 +15,8 @@
 .btn-google:hover {background: #f33b14;}
 
 .login-hr{margin: 10px 20px;}
-.login-panel{padding: 40px 20px 20px;width: 680px;margin: 0 auto;}
+.login-panel{padding: 40px 20px 20px;/*width: 680px;*/margin: 0 auto;width:35%;}
+.login-panel .panel-body{padding: 0;}
 
 .button {
 font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;

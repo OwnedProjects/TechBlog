@@ -1,5 +1,5 @@
 angular.module("TechBlog")
-	.controller("AddBlogController", LoginController);
+	.controller("AddBlogController", AddBlogController);
 
 function AddBlogController(){
     var vm = this;
