@@ -8,7 +8,7 @@ function AddBlogController(){
     vm.showTagInst = false;
 
     vm.init = function(){
-        
+       console.log("AddBlogController") 
     }
 
     vm.showInstruction = function(a){

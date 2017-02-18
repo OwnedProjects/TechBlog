@@ -9,6 +9,9 @@ function NavController($rootScope, $location){
     vm.logout = logout;
 
     function init(){
+        if(!$rootScope.user){
+            $location.path('/');
+        }
         console.log("NavController");
     };
 
