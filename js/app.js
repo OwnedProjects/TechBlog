@@ -21,7 +21,7 @@ angular.module("TechBlog", ["ngRoute", "textAngular", "firebase"])
 		  when("/addblog", {
 			templateUrl: 'template/Add-blog/add-blog.html',
 			controller: "AddBlogController",
-			controllerAs: "addctrl"
+			controllerAs: "addblogctrl"
 		  }).
 		  when("/allblog", {
 			templateUrl: 'template/All-blogs/allblogs.html',

@@ -19,7 +19,7 @@ function AllBlogController($firebaseArray, $rootScope, $location){
             vm.usersRef = firebase.database().ref().child('/users');
             vm.users = $firebaseArray(vm.usersRef);
             vm.currentUID = user.uid;
-            console.log(vm.currentUID);
+            //console.log(vm.currentUID);
             vm.findUserRootRef = firebase.database()
                     .ref().child('/users')
                     .orderByChild('uid')
@@ -27,7 +27,7 @@ function AllBlogController($firebaseArray, $rootScope, $location){
                     .once('value')
             .then(function(snapshot){
                 if(snapshot.val() != null){
-                   console.log(snapshot.val());
+                   //console.log(snapshot.val());
                 }
                 else{
                     var tmpUserDets = {
