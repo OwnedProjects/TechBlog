@@ -8,7 +8,7 @@ function AllBlogController($rootScope, $location){
     vm.init = init;
 
     function init(){
-        
+        $rootScope.setActiveMenu();
     };
 
     vm.init();

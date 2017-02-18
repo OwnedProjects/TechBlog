@@ -1,7 +1,9 @@
 angular.module("TechBlog")
 	.controller("BlogDetsController", BlogDetsController);
 
-function BlogDetsController(){
+BlogDetsController.$inject = ["$rootScope", "$location"];
+
+function BlogDetsController($rootScope){
     // variables defined
     var vm = this;
     vm.showcommentSection = false;
@@ -11,6 +13,7 @@ function BlogDetsController(){
     vm.togglecommentSection = togglecommentSection;
     
     function init(){
+        $rootScope.setActiveMenu();
     }
 
     function togglecommentSection (){

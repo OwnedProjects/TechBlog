@@ -1,14 +1,17 @@
 angular.module("TechBlog")
 	.controller("AddBlogController", AddBlogController);
 
-function AddBlogController(){
+AddBlogController.$inject = ["$rootScope", "$location"];
+
+function AddBlogController($rootScope){
     var vm = this;
     vm.showTitleInst = false;
     vm.showFormatInst = false;
     vm.showTagInst = false;
+    vm.init = init;
 
-    vm.init = function(){
-        
+    function init(){
+        $rootScope.setActiveMenu();
     }
 
     vm.showInstruction = function(a){
@@ -16,5 +19,4 @@ function AddBlogController(){
     }
 
     vm.init();
-
 }
