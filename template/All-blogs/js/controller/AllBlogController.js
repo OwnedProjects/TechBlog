@@ -20,22 +20,18 @@ function AllBlogController($firebaseArray, $rootScope, $location){
             vm.usersRef = firebase.database().ref().child('/users');
             vm.users = $firebaseArray(vm.usersRef);
             vm.currentUID = user.uid;
-<<<<<<< HEAD
-<<<<<<< HEAD
+
             //console.log(vm.currentUID);
             vm.findUserRootRef = firebase.database()
                     .ref().child('/users')
                     .orderByChild('uid')
                     .equalTo(vm.currentUID)
                     .once('value')
-=======
+
             console.log(vm.currentUID);
             vm.findUserRootRef = firebase.database().ref().child('/users').orderByChild('uid').equalTo(vm.currentUID).once('value')
->>>>>>> 01aca62ed69b5635587e47061cddfa52e95121a9
-=======
             console.log(vm.currentUID);
             vm.findUserRootRef = firebase.database().ref().child('/users').orderByChild('uid').equalTo(vm.currentUID).once('value')
->>>>>>> 01aca62ed69b5635587e47061cddfa52e95121a9
             .then(function(snapshot){
                 if(snapshot.val() != null){
                    //console.log(snapshot.val());
