@@ -47,13 +47,13 @@ function AddBlogController($firebaseArray, $rootScope, $location){
 
 		var bloglinkdata = {
 			"link": titleLink,
-			"blogTitle":vm.blogtitle,
+			"blogTitle":vm.blogTitle,
 			"blogdate": dt.getTime()
 		};
-        console.log(postData)
-        console.log(bloglinkdata)
-		//vm.blogs.$add(postData);
-		//vm.bloglinks.$add(bloglinkdata);
+        //console.log(postData)
+        //console.log(bloglinkdata)
+		vm.blogs.$add(postData);
+		vm.bloglinks.$add(bloglinkdata);
     }
     vm.init();
 }
