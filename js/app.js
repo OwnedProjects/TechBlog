@@ -1,4 +1,4 @@
-angular.module("TechBlog", ["ngRoute"])    
+angular.module("TechBlog", ["ngRoute", "textAngular"])    
 	.config(["$routeProvider",
 		function($routeProvider) {
 		$routeProvider.

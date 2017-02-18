@@ -35,12 +35,12 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
-                                <textarea type="text" class="form-control" id="content" placeholder="Ask Question" ng-model="formatInstruction" ng-focus="addctrl.showFormatInst = true" ng-blur="addctrl.showFormatInst = false" ng-change="content=true" ></textarea>
+                                <!--<textarea type="text" class="form-control" id="content" placeholder="Ask Question" ng-model="formatInstruction" ng-focus="addctrl.showFormatInst = true" ng-blur="addctrl.showFormatInst = false" ng-change="content=true" ></textarea>-->
+                                <text-angular ng-model="htmlVariable"></text-angular>
                             </div>
                         </div>
                         <div class="clearfix"></div>
                     </div>
-                    {{AddBlogForm.blogTitle.$dirty}}
                     <button type="submit" class="btn btn-default addBlog" ng-enabled="!addBlog.blogTitle.$dirty" >Submit</button>
                 </form>
             </div>
