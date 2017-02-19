@@ -33,7 +33,7 @@ function AddBlogController($firebaseArray, $rootScope, $location){
        }
     }
 
-    showInstruction = function(a){
+    function showInstruction(a){
         a = true;
     }
 
