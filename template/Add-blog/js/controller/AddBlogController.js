@@ -38,22 +38,24 @@ function AddBlogController($firebaseArray, $rootScope, $location){
     }
 
     function checkTitlePresence(){
-        var titleLink = vm.blogTitle.toLowerCase().split(" ").join("-");
-        console.log(titleLink);
-         vm.checkTitleDB = firebase.database()
-                    .ref().child('/blog-links')
-                    .orderByChild('link')
-                    .equalTo(titleLink.toString())
-                    .once('value')
-            .then(function(snapshot){
-                if(snapshot.val() != null){
-                   vm.titlePresent = true;
-                   alert("Title is present need to show a popup");
-                }
-                else{
-                    vm.titlePresent = false;
-                }
-            });
+        if(vm.blogTitle){
+            var titleLink = vm.blogTitle.toLowerCase().split(" ").join("-");
+            console.log(titleLink);
+            vm.checkTitleDB = firebase.database()
+                        .ref().child('/blog-links')
+                        .orderByChild('link')
+                        .equalTo(titleLink.toString())
+                        .once('value')
+                .then(function(snapshot){
+                    if(snapshot.val() != null){
+                    vm.titlePresent = true;
+                    alert("Title is present need to show a popup");
+                    }
+                    else{
+                        vm.titlePresent = false;
+                    }
+                });
+        }
     };
 
     function createNewBlog(){
