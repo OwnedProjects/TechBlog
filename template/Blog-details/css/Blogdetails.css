@@ -31,7 +31,9 @@ form.add-comment-form .form-control:focus{border-bottom: solid 2px #0280c8;}
 
 .addBlogInst.instruction{top: 269px;right: 15px;}
 .titlePresent.instruction{left: 10px;right: inherit; }
-.titlePresent {position: absolute;top: 54px;left: 13px;}
+.titlePresent {font-family:'robot' sans-serif;font-size: 14px;top: 54px;left: 13px;position: relative;}
+.titlePresent:after {bottom: 100%;left: 50%;border: solid transparent;content: " ";height: 0;width: 0;position: absolute;pointer-events: none;border-color: rgba(136, 183, 213, 0);border-bottom-color: #f2dede;border-width: 10px;margin-left: -10px;}
+
 
 /*comment section*/
 .comment-cnt{position: relative;}

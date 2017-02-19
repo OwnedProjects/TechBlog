@@ -48,7 +48,7 @@ function AddBlogController($firebaseArray, $rootScope, $location){
                 .then(function(snapshot){
                     if(snapshot.val() != null){
                     vm.titlePresent = true;
-                    alert("Title is present need to show a popup");
+                    //alert("Title is present need to show a popup");
                     }
                     else{
                         vm.titlePresent = false;
