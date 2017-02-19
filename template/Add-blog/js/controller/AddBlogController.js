@@ -12,8 +12,10 @@ function AddBlogController($firebaseArray, $rootScope, $location){
     vm.blogs = null;
     vm.rootRefBlogLinks = null;
     vm.bloglinks = null;
+    vm.titlePresent = false;
     vm.init = init;
     vm.createNewBlog = createNewBlog;
+    vm.checkTitlePresence = checkTitlePresence;
 
     function init(){
         $rootScope.setActiveMenu();
@@ -33,6 +35,25 @@ function AddBlogController($firebaseArray, $rootScope, $location){
     vm.showInstruction = function(a){
         a = true;
     }
+
+    function checkTitlePresence(){
+        var titleLink = vm.blogTitle.toLowerCase().split(" ").join("-");
+        console.log(titleLink);
+         vm.checkTitleDB = firebase.database()
+                    .ref().child('/blog-links')
+                    .orderByChild('link')
+                    .equalTo(titleLink.toString())
+                    .once('value')
+            .then(function(snapshot){
+                if(snapshot.val() != null){
+                   vm.titlePresent = true;
+                   alert("Title is present need to show a popup");
+                }
+                else{
+                    vm.titlePresent = false;
+                }
+            });
+    };
 
     function createNewBlog(){
         console.log(vm.blogTitle, vm.content);
