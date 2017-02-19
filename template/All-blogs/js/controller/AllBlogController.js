@@ -11,7 +11,6 @@ function AllBlogController($firebaseArray, $rootScope, $location){
     vm.init = init;
 
     function init(){
-        $rootScope.setActiveMenu();
         var user = $rootScope.user;
         if(!user){
             $location.path('/');

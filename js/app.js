@@ -9,6 +9,10 @@ angular.module("TechBlog", ["ngRoute", "textAngular", "firebase"])
 				messagingSenderId: "435978073211"
 			};
 			firebase.initializeApp(config);
+
+			$rootScope.$on("$locationChangeStart", function(event, next, current) { 
+				$rootScope.menuValue = next.split('#')[1];
+    });
 	}])    
 	.config(["$routeProvider",
 		function($routeProvider) {
