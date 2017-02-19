@@ -1,4 +1,4 @@
-.box{display:block;margin-bottom: 20px;background: #fff;border: none;border-radius: 3px;-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.4); box-shadow: 0 1px 1px rgba(0,0,0,0.4);}
+.box{display:block;margin-bottom: 20px;background: #fff;border: none;border-radius: 3px;-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.4); box-shadow: 0 1px 1px rgba(0,0,0,0.4);height: 196px;}
 .box:focus{text-decoration: none;}
 .box-heading{font-size: 14px;padding:10px 15px;font-family: 'brandon_grotesquemedium';border-radius: 3px 3px 0 0;}
 .box-heading img{margin-right: 10px;}
