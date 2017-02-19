@@ -1,5 +1,5 @@
 angular.module("TechBlog")
-	.controller("NavController", NavController);
+ .controller("NavController", NavController);
 
 NavController.$inject = ["$rootScope", "$location"];
 
