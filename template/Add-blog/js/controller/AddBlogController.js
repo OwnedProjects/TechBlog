@@ -61,10 +61,16 @@ function AddBlogController($firebaseArray, $rootScope, $location){
         console.log(vm.blogTitle, vm.content);
         var titleLink = vm.blogTitle.toLowerCase().split(" ").join("-");
 		var dt = new Date();
+        console.log($rootScope.user)
 		var postData = {
 			"bloglink":titleLink,
 			"title":vm.blogTitle,
 			"content":vm.content,
+            "userId": $rootScope.user.uid,
+            "username": $rootScope.user.displayName,
+            "userPic": $rootScope.user.photoURL,
+            "views": 0,
+            "likes": 0,
 			"blogdate": dt.getTime()
 		};
 
@@ -73,8 +79,8 @@ function AddBlogController($firebaseArray, $rootScope, $location){
 			"blogTitle":vm.blogTitle,
 			"blogdate": dt.getTime()
 		};
-        //console.log(postData)
-        //console.log(bloglinkdata)
+        console.log(postData)
+        console.log(bloglinkdata)
 		vm.blogs.$add(postData);
 		vm.bloglinks.$add(bloglinkdata);
     }
