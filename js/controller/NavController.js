@@ -14,7 +14,6 @@ function NavController($rootScope, $location){
         if(!$rootScope.user){
             $location.path('/');
         }
-        console.log("NavController");
         $rootScope.setActiveMenu();
     };
 
@@ -24,9 +23,7 @@ function NavController($rootScope, $location){
     };
 
     function setActiveMenu(){
-        //alert('setActiveMenu');
         $rootScope.menuValue = window.location.hash.split('#')[1];
-        //console.log(vm.menuValue);
     }
 
     vm.init();
