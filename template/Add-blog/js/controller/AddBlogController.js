@@ -19,7 +19,6 @@ function AddBlogController($firebaseArray, $rootScope, $location){
     vm.checkTitlePresence = checkTitlePresence;
 
     function init(){
-        $rootScope.setActiveMenu();
     }
     vm.init = function(){
        if(!$rootScope.user){
