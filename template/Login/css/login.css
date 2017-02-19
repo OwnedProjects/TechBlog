@@ -15,7 +15,7 @@
 .btn-google:hover {background: #f33b14;}
 
 .login-hr{margin: 10px 20px;}
-.login-panel{padding: 40px 20px 20px;/*width: 680px;*/margin: 0 auto;width:35%;}
+.login-panel{/*padding: 40px 20px 20px;width: 680px;*/margin: 0 auto;/*width:35%;*/background: none;box-shadow: none;}
 .login-panel .panel-body{padding: 0;}
 
 .button {
@@ -46,7 +46,7 @@
 }
 
 .button p{font-size: 18px;}
-.button span {position: absolute;left: 0;width: 50px;height: 40px; text-align: center;padding-top: 6px;font-size:30px;border-right: 1px solid  rgba(0,0,0,0.15);text-decoration: none;}
+.button span {position: absolute;left: 0;width: 50px;height: 38px; text-align: center;padding-top: 3px  ;font-size:30px;border-right: 1px solid  rgba(0,0,0,0.15);text-decoration: none;}
 
 .button.twitter {background: #00acee; max-width: 180px;margin:10px auto;}
 .button.facebook {background: #3b5998; max-width: 180px;margin:10px auto;}
