@@ -14,6 +14,7 @@ function AddBlogController($firebaseArray, $rootScope, $location){
     vm.bloglinks = null;
     vm.titlePresent = false;
     vm.init = init;
+    vm.showInstruction = showInstruction;
     vm.createNewBlog = createNewBlog;
     vm.checkTitlePresence = checkTitlePresence;
 
@@ -32,7 +33,7 @@ function AddBlogController($firebaseArray, $rootScope, $location){
        }
     }
 
-    vm.showInstruction = function(a){
+    showInstruction = function(a){
         a = true;
     }
 
