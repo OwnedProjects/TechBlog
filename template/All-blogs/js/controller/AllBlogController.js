@@ -7,6 +7,8 @@ function AllBlogController($firebaseArray, $rootScope, $location){
     var vm = this;
     vm.usersRef = null;
     vm.users = null;
+    vm.blogsRef = null;
+    vm.blogs = null;
     vm.findUserRootRef = null;
     vm.init = init;
 
@@ -42,8 +44,10 @@ function AllBlogController($firebaseArray, $rootScope, $location){
                 }
             });
         }
-        //vm.isUser = $firebaseArray(vm.findUserRootRef);
-        //console.log(vm.isUser)
+
+        //Fetch all blogs
+        vm.blogsRef = firebase.database().ref().child('/blog-post');
+        vm.blogs = $firebaseArray(vm.blogsRef);
     };
 
     vm.init();

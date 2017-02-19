@@ -6,78 +6,22 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-3">
-            <a href="#" class="box purple">
-                <div class="box-heading">
-                    <img src="images/avatar.png" />
-                    <span>Akiro Nakamura</span>
-                </div>
-                <div class="box-body">
-                    <h3>Transition effect not working</h3>
-                    <small>The title of Washed out’s breakthrough...</small>
-                </div>
-                <div class="box-footer">
-                    <ul class="list-inline">
-                        <li><i class="fa fa-thumbs-up"></i> 100</li>
-                        <li><i class="fa fa-mail-forward"></i> 100</li>
-                        <li><i class="fa fa-eye"></i> 100</li>
-                    </ul>
-                </div>
-            </a>
-        </div>
-        <div class="col-sm-3">
+
+        <div class="col-sm-3" ng-repeat="blog in allblogctrl.blogs">
             <a href="#" class="box">
                 <div class="box-heading blue">
-                    <img src="images/avatar.png" />
-                    <span>Akiro Nakamura</span>
+                    <img src="{{blog.userPic}}" class="img-circle" height="40" width="40"/>
+                    <span>{{blog.username}}</span>
                 </div>
                 <div class="box-body">
-                    <h3>Transition effect not working</h3>
-                    <small>The title of Washed out’s breakthrough...</small>
+                    <h3>{{blog.title}}</h3>
+                    <small ng-bind-html="blog.content"></small>
                 </div>
                 <div class="box-footer">
                     <ul class="list-inline">
-                        <li><i class="fa fa-thumbs-up"></i> 100</li>
-                        <li><i class="fa fa-mail-forward"></i> 100</li>
-                        <li><i class="fa fa-eye"></i> 100</li>
-                    </ul>
-                </div>
-            </a>
-        </div>
-        <div class="col-sm-3">
-            <a href="#" class="box blue">
-                <div class="box-heading">
-                    <img src="images/avatar.png" />
-                    <span>Akiro Nakamura</span>
-                </div>
-                <div class="box-body">
-                    <h3>Transition effect not working</h3>
-                    <small>The title of Washed out’s breakthrough...</small>
-                </div>
-                <div class="box-footer">
-                    <ul class="list-inline">
-                        <li><i class="fa fa-thumbs-up"></i> 100</li>
-                        <li><i class="fa fa-mail-forward"></i> 100</li>
-                        <li><i class="fa fa-eye"></i> 100</li>
-                    </ul>
-                </div>
-            </a>
-        </div>
-        <div class="col-sm-3">
-            <a href="#" class="box lightYellow">
-                <div class="box-heading">
-                    <img src="images/avatar.png" />
-                    <span>Akiro Nakamura</span>
-                </div>
-                <div class="box-body">
-                    <h3>Transition effect not working</h3>
-                    <small>The title of Washed out’s breakthrough...</small>
-                </div>
-                <div class="box-footer">
-                    <ul class="list-inline">
-                        <li><i class="fa fa-thumbs-up"></i> 100</li>
-                        <li><i class="fa fa-mail-forward"></i> 100</li>
-                        <li><i class="fa fa-eye"></i> 100</li>
+                        <li><i class="fa fa-thumbs-up"></i> {{blog.likes}}</li>
+                        <li><i class="fa fa-mail-forward"></i> {{0}}</li>
+                        <li><i class="fa fa-eye"></i> {{blog.views}}</li>
                     </ul>
                 </div>
             </a>
