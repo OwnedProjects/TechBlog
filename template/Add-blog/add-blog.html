@@ -11,7 +11,17 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
-                                <label for="Title">Title:</label>
+                                <label for="Title">Title:</label> 
+                                <input type="text" class="form-control" id="Title" placeholder="Title" ng-model="addblogctrl.blogTitle" ng-focus="addblogctrl.showTitleInst = true" ng-change="showTitle = true" ng-blur="addblogctrl.checkTitlePresence()">
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="Title">Tags:</label> 
+                                <input type="text" class="form-control" id="Title" placeholder="HTML, JavaScript, Jquery" >
                             </div>
                         </div>
                         <div class="clearfix"></div>
@@ -30,8 +40,9 @@
                                     <a class="pull-right" href="/help/how-to-ask">asking help »</a>-->
                                 </ul>
                             </div>
-                            <div ng-if="addblogctrl.showFormatInst" class="instruction alert alert-warning" id="showFormatInst">
+                            <div ng-if="addblogctrl.showFormatInst" class="addBlogInst instruction alert alert-warning">
                                 <h4>How to Format</h4>
+                                <button class="btn btn-close" ng-click="addblogctrl.showFormatInst = false"><i class="fa fa-window-close fa-lg"></i></button>
                                 <ul class="list-item">
                                     <li>put returns between paragraphs</li>
                                     <li>for linebreak add 2 spaces at end</li>
@@ -44,27 +55,12 @@
                                     <li><a href="/questions/how-to-ask">asking help »</a></li>
                                 </ul>
                             </div>
-                            <div ng-if="addblogctrl.tagInstruction" class="instruction alert alert-warning" id="tagInstruction">
-                                <h4>How to Tag</h4>
+                            <div ng-if="addblogctrl.titlePresent" class="titlePresent alert alert-danger">
                                 <ul class="list-item">
-                                    <li>A tag is a keyword or label that categorizes your question with other, similar questions.</li>
-                                    <li>favor existing popular tags; avoid creating new tags</li>
-                                    <li>use common abbreviations</li>
-                                    <li>don't include synonyms</li>
-                                    <li>combine multiple words into single-words with dashes</li>
-                                    <li>maximum of 5 tags, 25 chars per tag</li>
-                                    <li>tag characters: [a-z 0-9 + # - .]</li>
-                                    <li>delimit tags by space, semicolon, or comma</li>
-                                    <li><a href="/tags">popular tags »</a></li>
+                                    <li>Title is already present, please change title.</li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-sm-12">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="Title" placeholder="Title" ng-model="addblogctrl.blogTitle" ng-focus="addblogctrl.showTitleInst = true" ng-change="showTitle = true" ng-blur="addblogctrl.checkTitlePresence()">
-                            </div>
-                        </div>
-                        <div class="clearfix"></div>
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
@@ -78,56 +74,13 @@
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <!--<textarea type="text" class="form-control" id="content" placeholder="Ask Question" ng-model="formatInstruction" ng-focus="addblogctrl.showFormatInst = true" ng-blur="addblogctrl.showFormatInst = false" ng-change="content=true" ></textarea>-->
-                                <text-angular ng-model="addblogctrl.content"></text-angular>
+                                <text-angular ng-model="addblogctrl.content" ng-focus="addblogctrl.showFormatInst = true" ></text-angular>
                             </div>
                         </div>
                         <div class="clearfix"></div>
                     </div>
                     <button type="submit" class="btn btn-default addBlog" ng-disabled="!addblogctrl.blogTitle || !addblogctrl.content || addblogctrl.titlePresent" >Submit</button>
                 </form>
-            </div>
-            <div class="col-sm-4">
-                <div id="moveable-cnt">
-                    <div ng-if="addblogctrl.showTitleInst" class="instruction alert alert-warning" id="titleInstruction">
-                        <h4>How to Ask</h4>
-                        <ul class="list-item">
-                            <li>Is your question about programming?</li>
-                            <li>We prefer questions that can be <i>answered</i>, not just discussed.</li>
-                            <li>Provide details. Share your research.</li>
-                            <li>If your question is about this website, </li>
-                            <!--<a class="pull-right" href="/help">visit the help center »</a><br/>
-                            <a class="pull-right" href="/help/how-to-ask">asking help »</a>-->
-                        </ul>
-                    </div>
-                    <div ng-if="addblogctrl.showFormatInst" class="instruction alert alert-warning" id="showFormatInst">
-                        <h4>How to Format</h4>
-                        <ul class="list-item">
-                            <li>put returns between paragraphs</li>
-                            <li>for linebreak add 2 spaces at end</li>
-                            <li><i>_italic_</i> or <b>**bold**</b></li>
-                            <li>indent code by 4 spaces</li>
-                            <li>backtick escapes <code>`like _so_`</code></li>
-                            <li>quote by placing &gt; at start of line</li>
-                            <li>basic HTML also allowed</li>
-                            <li><a href="/editing-help" target="_edithelp">formatting help »</a></li>
-                            <li><a href="/questions/how-to-ask">asking help »</a></li>
-                        </ul>
-                    </div>
-                    <div ng-if="addblogctrl.tagInstruction" class="instruction alert alert-warning" id="tagInstruction">
-                        <h4>How to Tag</h4>
-                        <ul class="list-item">
-                            <li>A tag is a keyword or label that categorizes your question with other, similar questions.</li>
-                            <li>favor existing popular tags; avoid creating new tags</li>
-                            <li>use common abbreviations</li>
-                            <li>don't include synonyms</li>
-                            <li>combine multiple words into single-words with dashes</li>
-                            <li>maximum of 5 tags, 25 chars per tag</li>
-                            <li>tag characters: [a-z 0-9 + # - .]</li>
-                            <li>delimit tags by space, semicolon, or comma</li>
-                            <li><a href="/tags">popular tags »</a></li>
-                        </ul>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

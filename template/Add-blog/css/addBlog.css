@@ -26,7 +26,8 @@ form.addBlog-form .form-control:focus{border-bottom: solid 2px #0280c8;}
 /**/
 #Title:hover div#titleInstruction{display: block}
 
-button.btn-close{background: none;position: absolute;right: 0;top: 5px;}
+button.btn-close{background: none;position: absolute;right: 0;top: 5px;opacity: 0.3;}
+button.btn-close:hover{opacity: 1;}
 .ta-toolbar button{height: 34px;}
 .ta-root.focussed > .ta-scroll-window.form-control{background: #ffffff; padding: 10px; box-shadow: none; border: solid 1px #f0f0f0;}
 form.addBlog-form .ta-editor {padding: 10px;background-color: #FFF;border: 1px solid #EEE;}
