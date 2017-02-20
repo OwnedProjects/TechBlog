@@ -7,7 +7,7 @@
     </div>
     <div class="row">
 
-        <div class="col-sm-3" ng-repeat="blog in allblogctrl.blogs">
+        <div class="col-sm-3" ng-repeat="blog in allblogctrl.blogs" ng-if="blog.approvalStatus!='pending'">
             <a href="#" class="box">
                 <div class="box-heading blue">
                     <img ng-src="{{blog.userPic}}" class="img-circle" height="40" width="40"/>

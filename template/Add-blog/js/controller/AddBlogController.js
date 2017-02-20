@@ -1,9 +1,9 @@
 angular.module("TechBlog")
 	.controller("AddBlogController", AddBlogController);
 
-AddBlogController.$inject = ["$firebaseArray", "$rootScope", "$location"];
+AddBlogController.$inject = ["$firebaseArray", "$rootScope", "$location", "$timeout"];
 
-function AddBlogController($firebaseArray, $rootScope, $location){
+function AddBlogController($firebaseArray, $rootScope, $location, $timeout){
     var vm = this;
     vm.showTitleInst = false;
     vm.showFormatInst = false;
@@ -19,17 +19,13 @@ function AddBlogController($firebaseArray, $rootScope, $location){
     vm.checkTitlePresence = checkTitlePresence;
 
     function init(){
-    }
-    vm.init = function(){
-       if(!$rootScope.user){
+        if(!$rootScope.user){
            $location.path('/');
-       }
-       else{
+        }
+        else{
             vm.rootRef = firebase.database().ref().child('/blog-post');
 			vm.blogs = $firebaseArray(vm.rootRef);
-			vm.rootRefBlogLinks = firebase.database().ref().child('/blog-links');
-            vm.bloglinks = $firebaseArray(vm.rootRefBlogLinks);
-       }
+        }
     }
 
     function showInstruction(a){
@@ -39,19 +35,23 @@ function AddBlogController($firebaseArray, $rootScope, $location){
     function checkTitlePresence(){
         if(vm.blogTitle){
             var titleLink = vm.blogTitle.toLowerCase().split(" ").join("-");
-            console.log(titleLink);
-            vm.checkTitleDB = firebase.database()
-                        .ref().child('/blog-links')
-                        .orderByChild('link')
+            firebase.database()
+                        .ref().child('/blog-post')
+                        .orderByChild('bloglink')
                         .equalTo(titleLink.toString())
                         .once('value')
                 .then(function(snapshot){
+                    //console.log(snapshot.val())
                     if(snapshot.val() != null){
-                    vm.titlePresent = true;
+                    $timeout(function(){
+                        vm.titlePresent = true;
+                    },100);
                     //alert("Title is present need to show a popup");
                     }
                     else{
-                        vm.titlePresent = false;
+                        $timeout(function(){
+                            vm.titlePresent = false;
+                        },100);
                     }
                 });
         }
@@ -66,23 +66,39 @@ function AddBlogController($firebaseArray, $rootScope, $location){
 			"bloglink":titleLink,
 			"title":vm.blogTitle,
 			"content":vm.content,
+            "technologies": vm.technologies,
             "userId": $rootScope.user.uid,
             "username": $rootScope.user.displayName,
             "userPic": $rootScope.user.photoURL,
             "views": 0,
             "likes": 0,
-			"blogdate": dt.getTime()
-		};
-
-		var bloglinkdata = {
-			"link": titleLink,
-			"blogTitle":vm.blogTitle,
+            "approvalStatus": "pending",
 			"blogdate": dt.getTime()
 		};
         console.log(postData)
-        console.log(bloglinkdata)
-		vm.blogs.$add(postData);
-		vm.bloglinks.$add(bloglinkdata);
+            firebase.database()
+                        .ref().child('/blog-post')
+                        .orderByChild('bloglink')
+                        .equalTo(titleLink.toString())
+                        .once('value')
+                .then(function(snapshot){
+                    //console.log(snapshot.val())
+                    if(snapshot.val() != null){
+                    $timeout(function(){
+                        vm.titlePresent = true;
+                        alert("Title already there kindly change the title");
+                    },100);
+                    //alert("Title is present need to show a popup");
+                    }
+                    else{
+                        $timeout(function(){
+		                    vm.blogs.$add(postData);
+                            alert("blog added successfully, blog will go live after reviewers approval");
+                            $location.path("/");
+                        },100);
+                    }
+                });
     }
+
     vm.init();
 }
