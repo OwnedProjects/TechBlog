@@ -32,7 +32,7 @@ angular.module("TechBlog", ["ngRoute", "textAngular", "firebase"])
 			controller: "AllBlogController",
 			controllerAs: "allblogctrl"
 		  }).
-		  when("/blogdetails", {
+		  when("/blogdetails/:blogId", {
 			templateUrl: 'template/Blog-details/BlogDetails.html',
 			controller: "BlogDetsController",
 			controllerAs: "blogDetsCtrl"
