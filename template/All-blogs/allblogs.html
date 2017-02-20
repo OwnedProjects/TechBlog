@@ -6,7 +6,18 @@
         </div>
     </div>
     <div class="row">
-
+        <div id="preloader" ng-if="allblogctrl.blogs.length <= 0">
+            <div class="loader">
+                <svg class="circle-loader" height="50" width="50">
+                    <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="6" stroke-miterlimit="10"/>
+                </svg>
+            </div>    
+        </div>
+        <div class="col-sm-12" ng-if="allblogctrl.blogs.length > 0">
+            <div class="alert alert-info noblog-alert">
+                <h1><strong>Success!</strong> There is no blog to view. Please <a href="#/addblog" class="alert-link">add a blog</a>.</h1>
+            </div>
+        </div>
         <div class="col-sm-3" ng-repeat="blog in allblogctrl.blogs" ng-if="blog.approvalStatus!='pending'"> <!--| orderBy : $index:true -->
             <a href="#/blogdetails/{{blog.bloglink}}" class="box">
                 <div class="box-heading blue">
