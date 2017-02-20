@@ -9,6 +9,7 @@ function AllBlogController($firebaseArray, $rootScope, $location){
     vm.users = null;
     vm.blogsRef = null;
     vm.blogs = null;
+    vm.preloader = true;
     vm.findUserRootRef = null;
     vm.init = init;
 
@@ -42,6 +43,7 @@ function AllBlogController($firebaseArray, $rootScope, $location){
                     };
                     vm.users.$add(tmpUserDets);
                 }
+                vm.preloader = false;
             });
         }
 
