@@ -10,7 +10,7 @@
         <div class="col-sm-3" ng-repeat="blog in allblogctrl.blogs">
             <a href="#" class="box">
                 <div class="box-heading blue">
-                    <img src="{{blog.userPic}}" class="img-circle" height="40" width="40"/>
+                    <img ng-src="{{blog.userPic}}" class="img-circle" height="40" width="40"/>
                     <span>{{blog.username}}</span>
                 </div>
                 <div class="box-body">
