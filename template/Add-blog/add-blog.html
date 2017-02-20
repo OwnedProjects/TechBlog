@@ -8,11 +8,15 @@
         <div class="row">
             <div class="col-sm-12">
                 <form class="addBlog-form" name="AddBlogForm" ng-submit="addblogctrl.createNewBlog()">
+                    <div class="alert alert-warning">
+                        
+                    </div>
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <label for="Title">Title: </label> 
-                                <input type="text" class="form-control" id="Title" placeholder="Title" ng-model="addblogctrl.blogTitle" ng-focus="addblogctrl.showTitleInst = true; addblogctrl.titlePresent=false" ng-blur="addblogctrl.checkTitlePresence();">
+                                <input type="text" class="form-control" id="Title" placeholder="Title" ng-model="addblogctrl.blogTitle" ng-focus="addblogctrl.titlePresent=false" ng-blur="addblogctrl.checkTitlePresence();">
+                                <div class="titleinfo" ng-click="addblogctrl.showTitleInst = true;"><i class="fa fa-info"></i></div>
                             </div>
                         </div>
                         <div class="clearfix"></div>
