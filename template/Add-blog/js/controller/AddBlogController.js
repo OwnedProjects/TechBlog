@@ -13,6 +13,7 @@ function AddBlogController($firebaseArray, $rootScope, $location, $timeout){
     vm.rootRefBlogLinks = null;
     vm.bloglinks = null;
     vm.titlePresent = false;
+    vm.showReviewerMessage = false;
     vm.init = init;
     vm.showInstruction = showInstruction;
     vm.createNewBlog = createNewBlog;
@@ -93,7 +94,7 @@ function AddBlogController($firebaseArray, $rootScope, $location, $timeout){
                     else{
                         $timeout(function(){
 		                    vm.blogs.$add(postData);
-                            alert("blog added successfully, blog will go live after reviewers approval");
+                            vm.showReviewerMessage = true;
                             $location.path("/");
                         },100);
                     }

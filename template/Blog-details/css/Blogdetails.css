@@ -20,7 +20,7 @@ form.add-comment-form textarea.form-control{min-height: 200px;resize: none;}
 
 form.add-comment-form .form-control:focus{border-bottom: solid 2px #0280c8;}
 .addBlog{font-size: 18px; float:right;font-family: 'Roboto', sans-serif;color:#fff;background: #d7d7d7; border: none; border-radius: 0;padding: 10px 25px;}
-.addBlog:focus, .addBlog:hover{background: #0280c8;}
+.addBlog:focus, .addBlog:hover{background: #0280c8;color: #fff;}
 
 .instruction{position:absolute; right: 0;top:-15px; padding: 15px 15px 10px 15px;font-size: 14px;margin-bottom: 1.5em;background:#fcf3cf;border-radius: 0;border-color:#fae9a3;transition: display 3s ease-in-out 2s; z-index: 999;}
 .instruction h4{color:#333;font-family: 'brandon_grotesquemedium';font-size: 20px;}
@@ -29,7 +29,7 @@ form.add-comment-form .form-control:focus{border-bottom: solid 2px #0280c8;}
 .instruction ul li i.fa{margin-right: 10px;}
 .add-comment-form label.active{top: -30px; color: #333;}
 
-.addBlogInst.instruction{top: 269px;right: 15px;}
+.addBlogInst.instruction{top: 123px;right: 15px;}
 .titlePresent.instruction{left: 10px;right: inherit; }
 .titlePresent {font-family:'robot' sans-serif;font-size: 14px;top: 60px;left: 13px;position: absolute;}
 .titlePresent:after {bottom: 100%;left: 10%;border: solid transparent;content: " ";height: 0;width: 0;position: absolute;pointer-events: none;border-color: rgba(136, 183, 213, 0);border-bottom-color: #f2dede;border-width: 10px;margin-left: -10px;}

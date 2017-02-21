@@ -8,6 +8,9 @@
         <div class="row">
             <div class="col-sm-12">
                 <form class="addBlog-form" name="AddBlogForm" ng-submit="addblogctrl.createNewBlog()">
+                    <div class="alert alert-info reviewer-alert" ng-if="addblogctrl.showReviewerMessage">
+                        <strong>Note!</strong> You'r Blog added successfully! You'r blog will go live after reviewers approval.
+                    </div>
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
@@ -21,8 +24,8 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
-                                <label for="Title">Tags:</label> 
-                                <input type="text" class="form-control" id="Title" placeholder="HTML, JavaScript, Jquery" ng-model="addblogctrl.technologies">
+                                <label for="Tags">Tags:</label> 
+                                <input type="text" class="form-control" id="tags" placeholder="HTML, CSS, JavaScript, Jquery" ng-model="addblogctrl.technologies">
                             </div>
                         </div>
                         <div class="clearfix"></div>
@@ -73,7 +76,8 @@
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <!--<textarea type="text" class="form-control" id="content" placeholder="Ask Question" ng-model="formatInstruction" ng-focus="addblogctrl.showFormatInst = true" ng-blur="addblogctrl.showFormatInst = false" ng-change="content=true" ></textarea>-->
-                                <text-angular ng-model="addblogctrl.content" ng-focus="addblogctrl.showFormatInst = true" ></text-angular>
+                                <text-angular ng-model="addblogctrl.content" ></text-angular>
+                                <div class="titleinfo contentinfo" ng-click="addblogctrl.showFormatInst = true"><i class="fa fa-info"></i></div>
                             </div>
                         </div>
                         <div class="clearfix"></div>
