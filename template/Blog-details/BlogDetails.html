@@ -1,9 +1,9 @@
 <div class="container">
-    <!--<div class="row">
+    <div class="row">
         <div class="col-sm-12">
             <h1 class="page-title">Blog Details</h1>
         </div>
-    </div>-->
+    </div>
     <div class="add-blog-cnt">
         <div class="row">
             <div class="col-sm-12">
@@ -59,7 +59,7 @@
                             <li><a href="#"><i class="fa fa-eye fa-lg"></i> <span>10</span></a></li>
                             <li><a href="#"><i class="fa fa-mail-reply fa-lg"></i> <span>10</span></a></li>
                         </ul>
-                        <button class="btn btn-blue" ng-click="blogDetsCtrl.togglecommentSection()">add a comment</button>
+                        <button class="btn btn-blue" ng-click="blogDetsCtrl.showcommentSection = true">add a comment</button>
                         <div class="clearfix"></div>
                         <hr/>
                     </div>
@@ -86,12 +86,13 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="form-group">
-                            <label for="content" ng-class="{'active':active==true,'normal':active==false}">Your Answer</label>
+                            <label for="content" ng-class="{'active':active==true,'normal':active==false}">Your Comment</label>
                             <textarea type="text" class="form-control" id="content" ng-model="addCommentArea" ng-focus="active=true" ng-blur="active=false"></textarea>
                         </div>
                     </div>
                     <div class="clearfix"></div>
                 </div>
+                <button type="submit" class="btn btn-blue" ng-click="blogDetsCtrl.showcommentSection = false">Cancel</button>
                 <button type="submit" class="btn btn-blue">Post Your Answer</button>
                 <div class="clearfix"></div>
             </form>

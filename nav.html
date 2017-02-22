@@ -1,15 +1,16 @@
 <header ng-controller="NavController as navctrl">
-		<nav class="navbar navbar-default navbar-techBlog">
-			<div class="container">
-				<div class="navbar-header">
-					<a class="navbar-brand" href="#/"><span class="leftSpan"><</span>Tech-Blog <span>/</span><span class="rightSpan">></span></a>
-				</div>
-				<ul class="nav navbar-nav navbar-right">
-					<li ng-class="{'active': menuValue == '/allblog'}"><a href="#/allblog"><i class="icon fa fa-list-alt fa-lg"></i>All Blogs</a></li>
-					<li ng-class="{'active': menuValue == '/addblog'}"><a href="#/addblog"><i class="icon fa fa-commenting fa-lg"></i> Add Blog</a></li>
-					<!--<li ng-class="{'active': menuValue == '/blogdetails'}"><a href="#/blogdetails"><i class="icon fa  fa-info-circle fa-lg"></i> Blog Details</a></li>-->
-					<li><a href="#/myprofile"><i class="icon fa  fa-user-circle fa-lg"></i> My Profile</a></li>
-					<li><a href="javascript:void(0)" ng-click="navctrl.logout()"><i class="icon fa fa-power-off fa-lg"></i> Logout</a></li>
-				</ul>
+	<nav class="navbar navbar-default navbar-techBlog">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#/"><span class="leftSpan"><</span>Tech-Blog <span>/</span><span class="rightSpan">></span></a>
+			</div>
+			<ul class="nav navbar-nav navbar-right">
+				<li ng-class="{'active': menuValue == '/allblog'}"><a href="#/allblog"><i class="icon fa fa-list-alt fa-lg"></i>All Blogs</a></li>
+				<!--<li ng-class="{'active': menuValue == '/addblog'}"><a href="#/addblog"><i class="icon fa fa-commenting fa-lg"></i> Add Blog</a></li>-->
+				<li ng-class="{'active': menuValue == '/blogdetails'}"><a href="#/blogdetails"><i class="icon fa  fa-info-circle fa-lg"></i> Blog Details</a></li>
+				<li><a href="#/myprofile"><i class="icon fa  fa-user-circle fa-lg"></i> My Profile</a></li>
+				<li><a href="javascript:void(0)" ng-click="navctrl.logout()"><i class="icon fa fa-power-off fa-lg"></i> Logout</a></li>
+			</ul>
+		</div>
 	</nav>
 </header>

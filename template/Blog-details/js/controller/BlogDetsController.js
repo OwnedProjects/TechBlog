@@ -10,14 +10,9 @@ function BlogDetsController($rootScope){
 
     // function defining
     vm.init = init;
-    vm.togglecommentSection = togglecommentSection;
     
     function init(){
-        $rootScope.setActiveMenu();
-    }
 
-    function togglecommentSection (){
-        vm.showcommentSection = vm.showcommentSection === false ? true: false;
     }
     
     vm.init();

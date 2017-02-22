@@ -11,7 +11,7 @@ angular.module("TechBlog", ["ngRoute", "textAngular", "firebase"])
 			firebase.initializeApp(config);
 
 			$rootScope.$on("$locationChangeStart", function(event, next, current) { 
-				$rootScope.menuValue = next.split('#')[1];
+				$rootScope.menuValue = next.split('/')[1];
     });
 	}])    
 	.config(["$routeProvider",
