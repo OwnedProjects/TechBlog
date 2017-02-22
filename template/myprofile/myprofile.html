@@ -20,15 +20,25 @@
                     <div class="profile-middle">
                         <div class="tabs">
                             <ul class="list-inline">
-                                <li><a class="active" href="#">Profile</a></li>
-                                <li><a class="" href="#">Activity</a></li>
-                                <li><a class="" href="#">Edit Profile & Settings</a></li>
+                                <li><a ng-click="javascript:void(0)" ng-class="{{}}" class="active" href="#">Profile</a></li>
+                                <li><a ng-click="javascript:void(0)" ng-class="{{}}" class="" href="#">Activity</a></li>
+                                <li><a ng-click="javascript:void(0)" ng-class="{{}}" class="" href="#">Settings</a></li>
                             </ul>
                         </div>
-                        <div class="tabs-content">
+                        <div class="tabs-content profile-cnt" ng-if="true">
                             <h3>User name</h3>
-                            <p>senior software engineer at clariontechnologies</p>
-                            <p><i>(Your about me is currently blank. )</i></p>
+                            <p class="mutted-text">senior software engineer at clariontechnologies</p>
+                            <p class="mutted-text"><i>(Your about me is currently blank. )</i></p>
+                        </div>
+                        <div class="tabs-content activity-cnt" ng-if="false">
+                            <h3>User name</h3>
+                            <p class="mutted-text">senior software engineer at clariontechnologies</p>
+                            <p class="mutted-text"><i>(Your about me is currently blank. )</i></p>
+                        </div>
+                        <div class="tabs-content settings-cnt" ng-if="false">
+                            <h3>User name</h3>
+                            <p class="mutted-text">senior software engineer at clariontechnologies</p>
+                            <p class="mutted-text"><i>(Your about me is currently blank. )</i></p>
                         </div>
                     </div>
                 </div>

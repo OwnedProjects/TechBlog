@@ -10,3 +10,6 @@
 .profile-middle .tabs ul{margin-bottom: 0;}
 .profile-middle .tabs ul li a{display: block; padding: 15px;font-size: 14px; font-family: 'brandon_grotesquemedium'; text-transform: uppercase;}
 .profile-middle .tabs ul li a.active{border-bottom: solid 2px #ff5252;}
+.tabs-content{padding: 0 20px 20px;}
+.profile-cnt p{margin-bottom: 0;}
+.mutted-text{font-size: 14px; color: #999;}
