@@ -37,6 +37,11 @@ angular.module("TechBlog", ["ngRoute", "textAngular", "firebase"])
 			controller: "BlogDetsController",
 			controllerAs: "blogDetsCtrl"
 		  }).
+		  when("/myprofile", {
+			templateUrl: 'template/myprofile/myprofile.html',
+			controller: "MyprofileController",
+			controllerAs: "profileCtrl"
+		  }).
 		  otherwise({
 			redirectTo: "/login"
 		  });
