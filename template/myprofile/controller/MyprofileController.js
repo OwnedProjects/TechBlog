@@ -5,13 +5,12 @@ angular.module("TechBlog")
 function MyProfileController(){
     var vm = this;
     vm.tab = 1;
-    vm.tab = null;
     vm.init = init;
     vm.setTab = setTab;
     vm.isSet = isSet;
 
     function init(){
-
+      vm.setTab(1);
     }
 
     function setTab(newTab){
