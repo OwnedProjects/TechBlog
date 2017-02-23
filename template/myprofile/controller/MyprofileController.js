@@ -1,8 +1,8 @@
 angular.module("TechBlog")
-	.controller("MyprofileController", MyprofileController);
+	.controller("MyProfileController", MyProfileController);
 
 
-function MyprofileController(){
+function MyProfileController(){
     var vm = this;
     vm.tab = 1;
     vm.tab = null;
