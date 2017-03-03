@@ -4,21 +4,21 @@
             <h1 class="page-title">Blog Details</h1>
         </div>
     </div>
-    <div class="add-blog-cnt">
+    <div class="add-blog-cnt" ng-repeat="bdata in ::blogDetsCtrl.blogdata">
         <div class="row">
             <div class="col-sm-12">
                 <div id="question-header">
                     <div class="row">
                         <div class="col-sm-7">
-                            <h1 class="question-heading"><a href="#" class="question-hyperlink">scroll div initially to right then to left inside an overflow div</a></h1>
+                            <h1 class="question-heading"><span class="question-hyperlink">{{bdata.title}}</span></h1>
                         </div>
                         <div class="col-sm-5 text-right">
                             <a href="#" class="blog-poster">
-                                <span>John Deo</span>
-                                <img src="images/avatar.png" />
+                                <span>{{bdata.username}}</span>
+                                <img src="{{bdata.userPic}}" />
                             </a>
                             <ul class="list-inline questionDetail">
-                                <li><span class="labelTxt">Asked on</span><span class="label-input">Fri Feb 17 2017 15:23:36</span></li>
+                                <li><span class="labelTxt">Asked on</span><span class="label-input">{{bdata.blogdate | date:"dd-MM-yyyy HH:mm"}}</span></li>
                                 <!--<li><span class="labelTxt">Viewed</span><span class="label-input">30 times</span></li>
                                 <li><span class="labelTxt">Active</span><span class="label-input">today</span></li>-->
                             </ul>
@@ -28,35 +28,32 @@
                     </div>
                     <hr class="blog-line">
                 </div>
+                
                 <p>
-                    <div ng-repeat="bdata in ::blogDetsCtrl.blogdata">{{bdata}}</div>
-                    I have an <code>overflow-x</code> test div which contains horizontal list of various items in such a way that
-                    at a time not all elements are visible. It is intended that the inner contents of <code>div</code> is
-                    initially scrolled to rightmost side and then after the page gets loaded then after sometime (using <code>setTimeout()</code>)
-                    the inner content get slowly scrolled to leftmost, preferably with <code>.animate()</code> of jQuery.<br><br>                    I have tried <code>scrollLeft()</code> but not able to make it out for this.</p>
-                <pre class="default prettyprint prettyprinted"><code><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"container"</span><span class="pln"> </span><span class="atn">style</span><span class="pun">=</span><span class="atv">"width:100%;whitespace:nowrap;overflow-x:scroll;&gt;</span><span class="pln">
-                    </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"row"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"inner_row"</span><span class="tag">&gt;</span><span class="pln">
-                        </span><span class="tag">&lt;table&gt;</span><span class="pln">
-                            </span><span class="tag">&lt;tr&gt;</span><span class="pln">
-                                </span><span class="tag">&lt;td&gt;</span><span class="pln">Zero</span><span class="tag">&lt;/td&gt;</span><span class="pln">
-                                </span><span class="tag">&lt;td&gt;</span><span class="pln">One</span><span class="tag">&lt;/td&gt;</span><span class="pln">
-                                </span><span class="tag">&lt;td&gt;</span><span class="pln">Two</span><span class="tag">&lt;/td&gt;</span><span class="pln">
-                                </span><span class="tag">&lt;td&gt;</span><span class="pln">Three</span><span class="tag">&lt;/td&gt;</span><span class="pln">
-                                </span><span class="tag">&lt;td&gt;</span><span class="pln">Zero</span><span class="tag">&lt;/td&gt;</span><span class="pln">
-                                </span><span class="tag">&lt;td&gt;</span><span class="pln">One</span><span class="tag">&lt;/td&gt;</span><span class="pln">
-                                </span><span class="tag">&lt;td&gt;</span><span class="pln">Two</span><span class="tag">&lt;/td&gt;</span><span class="pln">
-                                </span><span class="tag">&lt;td&gt;</span><span class="pln">Three</span><span class="tag">&lt;/td&gt;</span><span class="pln">
-                            </span><span class="tag">&lt;/tr&gt;</span>
-                            <span class="pln"></span><span class="tag">&lt;/table&gt;</span>
-                        <span class="pln"></span><span class="tag">&lt;/div&gt;</span>
-                    <span class="pln"></span>
-                    <span class="tag">&lt;/div&gt;</span></code>
-                </pre>
+                <div>
+                    <!--<ul class="list-unstyled">
+                        <li class="hidden">{{bdata.approvalStatus}}</li>
+                        <li></li>
+                        <li>{{bdata.bloglink}}</li>
+                        <li></li>
+                        <li></li>
+                        <li>{{bdata.technologies}}</li>
+                        <li></li>
+                        <li><img width="100" height="100" src="{{bdata.userPic}}"></li>
+                        <li>{{bdata.views}}</li>
+                    </ul> -->
+                    <p ng-bind-html="bdata.content"></p>                   
+                </div>
+                <!--<pre class="default prettyprint prettyprinted">
+                    <code>
+                        <span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"container"</span><span class="pln"> </span><span class="atn">style</span><span class="pun">=</span><span class="atv">"width:100%;whitespace:nowrap;overflow-x:scroll;&gt;</span><span class="pln"></span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"row"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"inner_row"</span><span class="tag">&gt;</span><span class="pln"></span><span class="tag">&lt;table&gt;</span><span class="pln"></span><span class="tag">&lt;tr&gt;</span><span class="pln"></span><span class="tag">&lt;td&gt;</span><span class="pln">Zero</span><span class="tag">&lt;/td&gt;</span><span class="pln"></span><span class="tag">&lt;td&gt;</span><span class="pln">One</span><span class="tag">&lt;/td&gt;</span><span class="pln"></span><span class="tag">&lt;td&gt;</span><span class="pln">Two</span><span class="tag">&lt;/td&gt;</span><span class="pln"></span><span class="tag">&lt;td&gt;</span><span class="pln">Three</span><span class="tag">&lt;/td&gt;</span><span class="pln"></span><span class="tag">&lt;td&gt;</span><span class="pln">Zero</span><span class="tag">&lt;/td&gt;</span><span class="pln"></span><span class="tag">&lt;td&gt;</span><span class="pln">One</span><span class="tag">&lt;/td&gt;</span><span class="pln"></span><span class="tag">&lt;td&gt;</span><span class="pln">Two</span><span class="tag">&lt;/td&gt;</span><span class="pln"></span><span class="tag">&lt;td&gt;</span><span class="pln">Three</span><span class="tag">&lt;/td&gt;</span><span class="pln"></span><span class="tag">&lt;/tr&gt;</span><span class="pln"></span><span class="tag">&lt;/table&gt;</span><span class="pln"></span><span class="tag">&lt;/div&gt;</span><span class="pln"></span><span class="tag">&lt;/div&gt;</span>
+                    </code>
+                </pre>-->
                 <div class="col-sm-12 action-conatiner">
                     <div class="row">
                         <hr/>
                         <ul class="list-inline blog-like-dislike">
-                            <li><a href="#"><i class="fa fa-thumbs-up fa-lg"></i> <span class="text-right">30</span></a></li>
+                            <li><a href="#"><i class="fa fa-thumbs-up fa-lg"></i> <span class="text-right">{{bdata.likes}}</span></a></li>
                             <li><a href="#"><i class="fa fa-thumbs-down fa-lg"></i> <span>2</span></a></li>
                             <li><a href="#"><i class="fa fa-eye fa-lg"></i> <span>10</span></a></li>
                             <li><a href="#"><i class="fa fa-mail-reply fa-lg"></i> <span>10</span></a></li>
@@ -94,7 +91,7 @@
                     </div>
                     <div class="clearfix"></div>
                 </div>
-                <button type="submit" class="btn btn-blue" ng-click="blogDetsCtrl.showcommentSection = false">Cancel</button>
+                <button type="submit" class="btn btn-red" ng-click="blogDetsCtrl.showcommentSection = false">Cancel</button>
                 <button type="submit" class="btn btn-blue">Post Your Answer</button>
                 <div class="clearfix"></div>
             </form>

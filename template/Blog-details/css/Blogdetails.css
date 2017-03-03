@@ -8,6 +8,7 @@ pre{border: none;border-radius: 0;}
 .blog-like-dislike li{margin-right: 10px;}
 .blog-like-dislike li a{font-size: 12px; color:#999;}
 .blog-poster{font-family: 'Roboto', sans-serif;font-size: 20px;display: block; text-align: right;}
+.blog-poster img{width: 60px; height: 60px;border-radius: 50%;}
 .blog-poster span{margin-right: 8px;}
 .btn-blue{float:right;color:#fff;background: #0280c8;font-family: 'Roboto', sans-serif; font-size: 14px;text-transform: uppercase; border-radius: 0;transition: all 0.2s ease-in-out 0.2s; margin-left: 10px;}
 .btn-blue:hover, .btn-blue:focus{color:#fff;background: #3498db;}
@@ -73,3 +74,7 @@ form.add-comment-form .form-control:focus{border-bottom: solid 2px #0280c8;}
     left: -39px;
     top: 0px;
 }*/
+
+
+.btn-red{color:#fff; float:right; margin-left: 10px;background: #db4a39;border-radius: 0;}
+.btn-red:hover{color:#fff; background: rgba(219, 74, 57, 0.87);}
