@@ -1,20 +1,23 @@
 angular.module("TechBlog")
 	.controller("BlogDetsController", BlogDetsController);
 
-BlogDetsController.$inject = ["$firebaseArray", "$rootScope", "$location", "$routeParams"];
+BlogDetsController.$inject = ["$firebaseArray", "$rootScope", "$location", "$routeParams", "$timeout"];
 
-function BlogDetsController($firebaseArray, $rootScope, $location, $routeParams){
+function BlogDetsController($firebaseArray, $rootScope, $location, $routeParams, $timeout){
     // variables defined
     var vm = this;
     vm.blogdets = null;
     vm.blogid = null;
+    vm.user = null;
     vm.showcommentSection = false;
     vm.commentRef = null;
     vm.comments = null;
     vm.init = init;
     vm.postComment = postComment;
+    vm.writeAComment = writeAComment;
 
     function init(){
+        vm.user = $rootScope.user;
         vm.rootRef = firebase.database().ref().child('/blog-post').orderByChild('bloglink').equalTo($routeParams.blogId);
         vm.blogdata = $firebaseArray(vm.rootRef);
         vm.blogdata.$loaded()
@@ -46,6 +49,19 @@ function BlogDetsController($firebaseArray, $rootScope, $location, $routeParams)
         vm.commentdet = null;
         vm.showcommentSection = false;
     };
+
+    function writeAComment(){
+        console.log($rootScope.user);
+        if(vm.user){
+            vm.showcommentSection = true;
+            $timeout(function(){
+                window.scroll(0,(window.innerHeight*2));
+            },200);
+        }
+        else{
+            $location.path("/");
+        }
+    }
     
     vm.init();
 }

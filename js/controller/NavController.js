@@ -11,11 +11,13 @@ function NavController($rootScope, $location){
 
     function init(){
         if(!$rootScope.user){
-            $location.path('/');
+            $location.path('allblog');
         }
     };
 
     function logout(){
+        $rootScope.user = null;
+        $rootScope.menuValue = null;
         firebase.auth().signOut();
         $location.path("/");
     };

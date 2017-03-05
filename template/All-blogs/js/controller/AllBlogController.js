@@ -43,13 +43,20 @@ function AllBlogController($firebaseArray, $rootScope, $location){
                     };
                     vm.users.$add(tmpUserDets);
                 }
-                vm.preloader = false;
             });
         }
 
         //Fetch all blogs
         vm.blogsRef = firebase.database().ref().child('/blog-post');
         vm.blogs = $firebaseArray(vm.blogsRef);
+
+        vm.blogs.$loaded()
+            .then(function(response){
+                vm.preloader = false;
+            })
+            .catch(function(err){
+                console.log(err)
+            });
     };
 
     vm.init();
