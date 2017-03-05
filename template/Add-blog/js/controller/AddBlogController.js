@@ -64,6 +64,7 @@ function AddBlogController($firebaseArray, $rootScope, $location, $timeout){
 		var dt = new Date();
         console.log($rootScope.user)
 		var postData = {
+            "blogid": $rootScope.user.uid+dt.getTime(),
 			"bloglink":titleLink,
 			"title":vm.blogTitle,
 			"content":vm.content,

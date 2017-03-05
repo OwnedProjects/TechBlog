@@ -4,21 +4,21 @@
             <h1 class="page-title">Blog Details</h1>
         </div>
     </div>
-    <div class="add-blog-cnt" ng-repeat="bdata in ::blogDetsCtrl.blogdata">
+    <div class="add-blog-cnt">
         <div class="row">
             <div class="col-sm-12">
                 <div id="question-header">
                     <div class="row">
                         <div class="col-sm-7">
-                            <h1 class="question-heading"><span class="question-hyperlink">{{bdata.title}}</span></h1>
+                            <h1 class="question-heading"><span class="question-hyperlink">{{blogDetsCtrl.blogdets.title}}</span></h1>
                         </div>
                         <div class="col-sm-5 text-right">
                             <a href="#" class="blog-poster">
-                                <span>{{bdata.username}}</span>
-                                <img src="{{bdata.userPic}}" />
+                                <span>{{blogDetsCtrl.blogdets.username}}</span>
+                                <img src="{{blogDetsCtrl.blogdets.userPic}}" />
                             </a>
                             <ul class="list-inline questionDetail">
-                                <li><span class="labelTxt">Asked on</span><span class="label-input">{{bdata.blogdate | date:"dd-MM-yyyy HH:mm"}}</span></li>
+                                <li><span class="labelTxt">Asked on</span><span class="label-input">{{blogDetsCtrl.blogdets.blogdate | date:"dd-MM-yyyy HH:mm"}}</span></li>
                                 <!--<li><span class="labelTxt">Viewed</span><span class="label-input">30 times</span></li>
                                 <li><span class="labelTxt">Active</span><span class="label-input">today</span></li>-->
                             </ul>
@@ -32,17 +32,17 @@
                 <p>
                 <div>
                     <!--<ul class="list-unstyled">
-                        <li class="hidden">{{bdata.approvalStatus}}</li>
+                        <li class="hidden">{{blogDetsCtrl.blogdets.approvalStatus}}</li>
                         <li></li>
-                        <li>{{bdata.bloglink}}</li>
+                        <li>{{blogDetsCtrl.blogdets.bloglink}}</li>
                         <li></li>
                         <li></li>
-                        <li>{{bdata.technologies}}</li>
+                        <li>{{blogDetsCtrl.blogdets.technologies}}</li>
                         <li></li>
-                        <li><img width="100" height="100" src="{{bdata.userPic}}"></li>
-                        <li>{{bdata.views}}</li>
+                        <li><img width="100" height="100" src="{{blogDetsCtrl.blogdets.userPic}}"></li>
+                        <li>{{blogDetsCtrl.blogdets.views}}</li>
                     </ul> -->
-                    <p ng-bind-html="bdata.content"></p>                   
+                    <p ng-bind-html="blogDetsCtrl.blogdets.content"></p>                   
                 </div>
                 <!--<pre class="default prettyprint prettyprinted">
                     <code>
@@ -53,26 +53,26 @@
                     <div class="row">
                         <hr/>
                         <ul class="list-inline blog-like-dislike">
-                            <li><a href="javascript:void(0);"><i class="fa fa-thumbs-up fa-lg"></i> <span class="text-right">{{bdata.likes}}</span></a></li>
+                            <li><a href="javascript:void(0);"><i class="fa fa-thumbs-up fa-lg"></i> <span class="text-right">{{blogDetsCtrl.blogdets.likes}}</span></a></li>
                             <li><a href="#"><i class="fa fa-thumbs-down fa-lg"></i> <span>&nbsp;</span></a></li>
                             <li><a href="#"><i class="fa fa-eye fa-lg"></i> <span>&nbsp;</span></a></li>
                             <li><a href="#"><i class="fa fa-mail-reply fa-lg"></i> <span>&nbsp;</span></a></li>
                         </ul>
-                        <button class="btn btn-blue" ng-click="blogDetsCtrl.showcommentSection = true">add a comment</button>
+                        <button class="btn btn-blue" ng-click="blogDetsCtrl.showcommentSection = true">Write a comment</button>
                         <div class="clearfix"></div>
                         <hr/>
                     </div>
-                    <div class="row">
+                    <div class="row" ng-repeat="comment in blogDetsCtrl.comments">
                         <div class="col-sm-12">
                             <div class="comment-cnt">
                                 <div class="thumbnail">
-                                    <img class="user-photo" src="images/avatar.png">
+                                    <img class="user-photo img-circle" ng-src="{{comment.userPic}}">
                                 </div>
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <strong>Owais p</strong> <span class="text-muted">21-02-2017 17:53</span>
+                                        <strong>{{comment.username}}</strong> <span class="text-muted">{{comment.cmntdate | date: "dd-MM-yyyy HH:mm"}}</span>
                                     </div>
-                                    <div class="panel-body"> Panel content  </div><!-- /panel-body -->
+                                    <div class="panel-body" ng-bind-html="comment.comment"> Panel content  </div><!-- /panel-body -->
                                 </div>
                             </div>
                         </div>
@@ -86,13 +86,13 @@
                     <div class="col-sm-12">
                         <div class="form-group">
                             <label for="content" ng-class="{'active':active==true,'normal':active==false}">Your Comment</label>
-                            <textarea type="text" class="form-control" id="content" ng-model="addCommentArea" ng-focus="active=true" ng-blur="active=false"></textarea>
+                            <textarea type="text" class="form-control" id="content" ng-model="blogDetsCtrl.commentdet" ng-focus="active=true" ng-blur="active=false"></textarea>
                         </div>
                     </div>
                     <div class="clearfix"></div>
                 </div>
-                <button type="submit" class="btn btn-red" ng-click="blogDetsCtrl.showcommentSection = false">Cancel</button>
-                <button type="submit" class="btn btn-blue">Post Your Answer</button>
+                <button type="button" class="btn btn-red" ng-click="blogDetsCtrl.showcommentSection = false">Cancel</button>
+                <button type="button" class="btn btn-blue" ng-click="blogDetsCtrl.postComment();" ng-disabled="!blogDetsCtrl.commentdet">Post Your Comment</button>
                 <div class="clearfix"></div>
             </form>
         </div>

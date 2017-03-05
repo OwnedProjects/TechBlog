@@ -6,14 +6,46 @@ BlogDetsController.$inject = ["$firebaseArray", "$rootScope", "$location", "$rou
 function BlogDetsController($firebaseArray, $rootScope, $location, $routeParams){
     // variables defined
     var vm = this;
+    vm.blogdets = null;
+    vm.blogid = null;
     vm.showcommentSection = false;
+    vm.commentRef = null;
+    vm.comments = null;
     vm.init = init;
-    
+    vm.postComment = postComment;
+
     function init(){
         vm.rootRef = firebase.database().ref().child('/blog-post').orderByChild('bloglink').equalTo($routeParams.blogId);
         vm.blogdata = $firebaseArray(vm.rootRef);
-        console.log(vm.blogdata)
-    }
+        vm.blogdata.$loaded()
+            .then(function(snapshot){
+                vm.blogdets = snapshot[0];
+                vm.blogid = snapshot[0].blogid;
+
+                vm.commentRef = firebase.database().ref().child('/blog-comments').orderByChild('blogid').equalTo(vm.blogid);
+                vm.comments = $firebaseArray(vm.commentRef);
+                console.log(vm.comments);
+            })
+            .catch(function(err){
+                console.log("Error: ", err)
+            });
+    };
+
+    function postComment(){
+        var dt = new Date();
+        var commentData = {
+            "blogid": vm.blogid,
+            "comment": vm.commentdet,
+			"userId": $rootScope.user.uid,
+            "username": $rootScope.user.displayName,
+            "userPic": $rootScope.user.photoURL,
+            "cmntdate": dt.getTime()
+		};
+
+        vm.comments.$add(commentData);
+        vm.commentdet = null;
+        vm.showcommentSection = false;
+    };
     
     vm.init();
 }
