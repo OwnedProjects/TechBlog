@@ -5,8 +5,8 @@ AddBlogController.$inject = ["$firebaseArray", "$rootScope", "$location", "$time
 
 function AddBlogController($firebaseArray, $rootScope, $location, $timeout){
     var vm = this;
-    vm.showTitleInst = false;
-    vm.showFormatInst = false;
+    vm.showTitleInst = true;
+    vm.showFormatInst = true;
     vm.showTagInst = false;
     vm.rootRef = null;
     vm.blogs = null;
