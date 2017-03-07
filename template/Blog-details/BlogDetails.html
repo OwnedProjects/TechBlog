@@ -15,12 +15,10 @@
                         <div class="col-sm-5 text-right">
                             <a href="#" class="blog-poster">
                                 <span>{{blogDetsCtrl.blogdets.username}}</span>
-                                <img src="{{blogDetsCtrl.blogdets.userPic}}" />
+                                <!--<img src="{{blogDetsCtrl.blogdets.userPic}}" />-->
                             </a>
                             <ul class="list-inline questionDetail">
                                 <li><span class="labelTxt">Asked on</span><span class="label-input">{{blogDetsCtrl.blogdets.blogdate | date:"dd-MM-yyyy HH:mm"}}</span></li>
-                                <!--<li><span class="labelTxt">Viewed</span><span class="label-input">30 times</span></li>
-                                <li><span class="labelTxt">Active</span><span class="label-input">today</span></li>-->
                             </ul>
                             <div class="clearfix"></div>
                         </div>
@@ -31,24 +29,8 @@
                 
                 <p>
                 <div>
-                    <!--<ul class="list-unstyled">
-                        <li class="hidden">{{blogDetsCtrl.blogdets.approvalStatus}}</li>
-                        <li></li>
-                        <li>{{blogDetsCtrl.blogdets.bloglink}}</li>
-                        <li></li>
-                        <li></li>
-                        <li>{{blogDetsCtrl.blogdets.technologies}}</li>
-                        <li></li>
-                        <li><img width="100" height="100" src="{{blogDetsCtrl.blogdets.userPic}}"></li>
-                        <li>{{blogDetsCtrl.blogdets.views}}</li>
-                    </ul> -->
                     <p ng-bind-html="blogDetsCtrl.blogdets.content"></p>                   
                 </div>
-                <!--<pre class="default prettyprint prettyprinted">
-                    <code>
-                        <span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"container"</span><span class="pln"> </span><span class="atn">style</span><span class="pun">=</span><span class="atv">"width:100%;whitespace:nowrap;overflow-x:scroll;&gt;</span><span class="pln"></span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"row"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"inner_row"</span><span class="tag">&gt;</span><span class="pln"></span><span class="tag">&lt;table&gt;</span><span class="pln"></span><span class="tag">&lt;tr&gt;</span><span class="pln"></span><span class="tag">&lt;td&gt;</span><span class="pln">Zero</span><span class="tag">&lt;/td&gt;</span><span class="pln"></span><span class="tag">&lt;td&gt;</span><span class="pln">One</span><span class="tag">&lt;/td&gt;</span><span class="pln"></span><span class="tag">&lt;td&gt;</span><span class="pln">Two</span><span class="tag">&lt;/td&gt;</span><span class="pln"></span><span class="tag">&lt;td&gt;</span><span class="pln">Three</span><span class="tag">&lt;/td&gt;</span><span class="pln"></span><span class="tag">&lt;td&gt;</span><span class="pln">Zero</span><span class="tag">&lt;/td&gt;</span><span class="pln"></span><span class="tag">&lt;td&gt;</span><span class="pln">One</span><span class="tag">&lt;/td&gt;</span><span class="pln"></span><span class="tag">&lt;td&gt;</span><span class="pln">Two</span><span class="tag">&lt;/td&gt;</span><span class="pln"></span><span class="tag">&lt;td&gt;</span><span class="pln">Three</span><span class="tag">&lt;/td&gt;</span><span class="pln"></span><span class="tag">&lt;/tr&gt;</span><span class="pln"></span><span class="tag">&lt;/table&gt;</span><span class="pln"></span><span class="tag">&lt;/div&gt;</span><span class="pln"></span><span class="tag">&lt;/div&gt;</span>
-                    </code>
-                </pre>-->
                 <div class="col-sm-12 action-conatiner">
                     <div class="row">
                         <hr/>
@@ -65,9 +47,9 @@
                     <div class="row" ng-repeat="comment in blogDetsCtrl.comments">
                         <div class="col-sm-12">
                             <div class="comment-cnt">
-                                <div class="thumbnail">
+                                <!--<div class="thumbnail">
                                     <img class="user-photo img-circle" ng-src="{{comment.userPic}}">
-                                </div>
+                                </div>-->
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <strong>{{comment.username}}</strong> <span class="text-muted">{{comment.cmntdate | date: "dd-MM-yyyy HH:mm"}}</span>
