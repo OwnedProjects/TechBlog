@@ -73,6 +73,8 @@ function MyProfileController($firebaseArray, $rootScope, $timeout){
               vm.userdb.$save(0).then(function(ref) {
                 console.log(ref)
               });
+              
+              vm.getImageURL(vm.user.uid);
               console.log(vm.userdb[0])
               alert("Image uploaded successfully.")
             }
