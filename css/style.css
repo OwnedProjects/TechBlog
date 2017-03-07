@@ -25,12 +25,58 @@ body{font-family: 'brandon_grotesque_regularRg'; font-size: 12px; background: rg
 .navbar-techBlog .navbar-brand span.rightSpan{ margin-left: 0px; vertical-align: top; display: inline-block; margin-top: -2px;}
 .navbar-techBlog .navbar-brand span.leftSpan{margin-right: 3px;vertical-align: top;display: inline-block;margin-top: -2px;}
 .navbar-techBlog .navbar-nav>.active>a, .navbar-techBlog .navbar-nav>li>a{color:rgba(255,255,255, 0.60); padding: 5px 10px;text-transform: uppercase;}
-.navbar-techBlog .navbar-nav{margin: 10px 0;}
+.navbar-techBlog .navbar-header{float: left;}
+.navbar-techBlog .navbar-nav{margin: 15px 0; float: right;}
 .navbar-techBlog .navbar-nav>.active>a, 
 .navbar-techBlog .navbar-nav>.active>a:focus, 
 .navbar-techBlog .navbar-nav>.active>a:hover,
 .navbar-techBlog .navbar-nav>li>a:focus, 
 .navbar-techBlog .navbar-nav>li>a:hover{color:#fff; background: rgba(255,255,255, 0.24); border-radius: 2px;}
 .icon {margin-right: 5px;}
-.navbar-techBlog .navbar-nav>li{margin: 0 7px;}
+.navbar-techBlog .navbar-nav>li{margin: 0 7px;display: inline-block;}
 /* Navigation end */
+.navbar-default .navbar-toggle{border: none;}
+.navbar-default .navbar-toggle .icon-bar, .navbar-default .navbar-toggle:focus .icon-bar, .navbar-default .navbar-toggle:hover .icon-bar{background: #fff;}
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover{background: none;}
+
+
+/* Custom, iPhone Retina */ 
+@media(max-width:320px){
+    body {
+        /*background-color: lime;*/
+        font-size:14px;
+     }
+    .menuTxt{display: none;}
+}
+@media only screen and (min-width : 320px) {
+     body {
+        /*background-color: red;*/
+    }
+    .menuTxt{display: none;}
+}
+/* Extra Small Devices, Phones */ 
+@media only screen and (min-width : 480px) {
+     body {
+        /*background-color: aqua;*/
+    }
+    .menuTxt{display: none;}
+}
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+     body {
+        /*background-color: green;*/
+    }
+    .menuTxt{display: inline-block;}
+}
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+     body {
+        /*background-color: grey;*/
+    }
+}
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+     body {
+        /*background-color: black;*/
+    }
+}
