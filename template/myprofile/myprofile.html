@@ -1,20 +1,25 @@
 <div class="container">
-    <div class="row">
+    <!--<div class="row">
         <div class="col-sm-12">
             <h1 class="page-title">My Profile</h1>
         </div>
-    </div>
+    </div>-->
     <div class="myProfile-cnt">
         <div class="row">
             <div class="col-sm-12">
                 <div class="profile-cnt">
                     <div class="profile-header">
-                        <div class="profile-pic">
-                            <!--<img src="images/profilePic.png">-->
+                            <img ng-src="{{profileCtrl.imgURL}}" class="img-responsive">
+                        <!--<div class="profile-pic">
                             <img ng-src="{{profileCtrl.imgURL}}" class="img-circle">
                             <br/>
-                            <a href="javascript:void(0)" class="changepiclink" ng-click="profileCtrl.showImageUploadPopup()">Change Picture</a>
-                        </div>
+                            <a href="javascript:void(0)" class="changepiclink" ng-click="profileCtrl.showImageUploadPopup()">
+                                <span>Change Picture</span>
+                            </a>
+                        </div>-->
+                        <a href="javascript:void(0)" class="changepiclink" ng-click="profileCtrl.showImageUploadPopup()">
+                            <span>Change Picture</span>
+                        </a>
                         <div class="profile-detail">
                             <h3>{{profileCtrl.user.displayName}}</h3>
                             <p>Blogger</p>
@@ -52,13 +57,13 @@
 
 <div class="overlay" ng-show="profileCtrl.uploadImgPopUp">
     <div class="container">
-        <div class="panel panel-primary">
+        <div class="panel panel-primary upload-panel">
             <div class="panel-heading">
                 <h3 class="panel-title">Upload profile picture</h3>
                 <i class="fa fa-times fa-lg closepopupicon" ng-click="profileCtrl.closepopup()"></i>
             </div>
             <div class="panel-body">
-                <progress value="0" max="100" id="uploader" class="col-sm-12">0%</progress><br/>
+                <progress value="0" max="100" id="uploader" class="col-sm-12">0%</progress>
 				<input type="file" value="upload" id="fileButton" />
             </div>
         </div>

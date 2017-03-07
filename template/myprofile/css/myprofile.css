@@ -1,11 +1,13 @@
-.myProfile-cnt{background: #fff;-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.4);box-shadow: 0 1px 1px rgba(0,0,0,0.4);border-radius: 5px;}
-.profile-pic{display: inline-block;width: 100px; height: 100px; vertical-align: top;border: solid 5px #fff;border-radius: 50%;}
-.changepiclink{margin-top: 10px;}
+.myProfile-cnt{margin-top: 20px;background: #fff;-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.4);box-shadow: 0 1px 1px rgba(0,0,0,0.4);border-radius: 5px;}
+.profile-pic{ position: relative;display: inline-block;width: 100px; height: 100px;overflow: hidden;border: solid 5px #fff;border-radius: 50%;}
+.changepiclink:hover{opacity: 1;}
+.changepiclink{display:table;position: absolute; left: 0; top: 0; width: 100%;height: 100%;background:rgba(136, 136, 136, 0.52); color: #fff; opacity: 0; transition: all 0.2s ease-in-out 0.2s;}
+.changepiclink span{display: table-cell;vertical-align: middle; text-align: center; padding: 20px;}
 .profile-pic img{width: 100%;height: 100%;}
-.profile-detail{margin-left: 10px;display:inline-block;}
+.profile-detail{margin-left: 10px;display:inline-block;position: absolute; left: 50px; bottom: 40%;}
 .profile-detail h3{margin-bottom: 5px; font-family: 'brandon_grotesquemedium'; font-size: 30px;color:#fff;text-shadow: 0 0 1px rgba(57,70,78,.15), 0 20px 55px -8px rgba(57,70,78,.25);}
 .profile-detail p{color: #fff;}
-.profile-header{padding: 20px;background:#0281c8; vertical-align:top;border-radius: 5px 5px 0  0;}
+.profile-header{position: relative;height: 300px; overflow: hidden;background:#0281c8; vertical-align:top;border-radius: 5px 5px 0  0;}
 .profile-middle{padding: 0;}
 .profile-middle .tabs{border-bottom: solid 1px #e4e4e4; background: #f6f6f6;}
 .profile-middle .tabs ul{margin-bottom: 0;}
@@ -38,3 +40,5 @@
     margin-top: -15px;
 	cursor: pointer;
 }
+.upload-panel{max-width: 400px; margin-left: auto; margin-right: auto; }
+.upload-panel input[type="file"]{width: 80px;margin-top: 20px;background: #ff5252; color: #fff; border: none; box-shadow: 1px 2px 3px rgba(0,0,0,0.5);}
