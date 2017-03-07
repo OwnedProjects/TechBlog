@@ -11,6 +11,7 @@ function MyProfileController($firebaseArray, $rootScope, $timeout){
     vm.init = init;
     vm.setTab = setTab;
     vm.isSet = isSet;
+    vm.showImageLoader = false;
     vm.showImageUploadPopup = showImageUploadPopup;
 	  vm.closepopup = closepopup;
     vm.image_upload = image_upload;
@@ -75,20 +76,24 @@ function MyProfileController($firebaseArray, $rootScope, $timeout){
               });
               
               vm.getImageURL(vm.user.uid);
-              console.log(vm.userdb[0])
-              alert("Image uploaded successfully.")
+              console.log(vm.userdb[0]);
+              vm.uploadImgPopUp = false;
+              alert("Image uploaded successfully.");
+              uploader.value = 0;
             }
           );
         });
       };
 	
       function getImageURL(imgLink){
+        vm.showImageLoader = true;
         var storageRef = firebase.storage().ref();
         storageRef.child(imgLink).getDownloadURL().then(function(url) {
         console.log(url);
         $timeout(function(){
             vm.imgURL = url;
-            console.log(vm.imgURL)
+            console.log(vm.imgURL);
+            vm.showImageLoader = false;
         },100);
         //url: https://firebasestorage.googleapis.com/v0/b/git-blog-4737d.appspot.com/o/1485767556247Lighthouse.jpg?alt=media&token=5a1c5c66-7062-4c0b-80d0-626adf2902f5
         }).catch(function(error) {
