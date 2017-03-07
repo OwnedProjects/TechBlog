@@ -20,20 +20,22 @@
         </div>
         <div class="col-sm-3" ng-repeat="blog in allblogctrl.blogs" ng-if="blog.approvalStatus!='pending'">
             <a href="#/blogdetails/{{blog.bloglink}}" class="box">
-                <div class="box-heading blue">
+                <!--<div class="box-heading blue">
                     <img ng-src="{{blog.userPic}}" class="img-circle" height="40" width="40"/>
                     <span>{{blog.username}}</span>
-                </div>
+                </div>-->
                 <div class="box-body">
                     <h3>{{blog.title}}</h3>
                     <small ng-bind-html="blog.content"></small>
                 </div>
-                <div class="box-footer">
-                    <ul class="list-inline">
+                <div class="box-footer blue">
+                    <ul class="list-inline pull-left">
                         <li><i class="fa fa-thumbs-up"></i> {{blog.likes}}</li>
                         <li><i class="fa fa-mail-forward"></i> {{0}}</li>
                         <li><i class="fa fa-eye"></i> {{blog.views}}</li>
                     </ul>
+                    <span class="pull-right blog-name">{{blog.username}}</span>
+                    <div class="clearfix"></div>
                 </div>
             </a>
         </div>
