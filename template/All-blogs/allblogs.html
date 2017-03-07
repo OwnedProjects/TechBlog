@@ -18,7 +18,7 @@
                 <h1><strong>Error!</strong> There is no blog to view. Please <a href="#/addblog" class="alert-link"><span class="text-info">add a blog</span></a>.</h1>
             </div>
         </div>
-        <div class="col-sm-3" ng-repeat="blog in allblogctrl.blogs" ng-if="blog.approvalStatus!='pending'">
+        <div class="colmd-3 col-sm-4 col-xs-6" ng-repeat="blog in allblogctrl.blogs" ng-if="blog.approvalStatus!='pending'">
             <a href="#/blogdetails/{{blog.bloglink}}" class="box">
                 <!--<div class="box-heading blue">
                     <img ng-src="{{blog.userPic}}" class="img-circle" height="40" width="40"/>
