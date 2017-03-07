@@ -1,4 +1,4 @@
-.box{display:block;margin-bottom: 20px;background: #fff;border: none;border-radius: 3px;-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.4); box-shadow: 0 1px 1px rgba(0,0,0,0.4);height: 156px;position: relative;}
+.box{display:block;margin-bottom: 20px;background: #fff;border: none;border-radius: 3px;-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.4); box-shadow: 0 1px 1px rgba(0,0,0,0.4);height: 120px;position: relative;}
 .box:focus{text-decoration: none;}
 .box-heading{font-size: 14px;padding:10px 20px;font-family: 'brandon_grotesquemedium';border-radius: 3px 3px 0 0;}
 .box-heading img{margin-right: 10px;}
@@ -34,7 +34,7 @@
 
 .circle-loader {
   -webkit-animation: rotate 2s linear infinite;
-          animation: rotate 2s linear infinite;
+  animation: rotate 2s linear infinite;
   height: 50px;
   left: 50%;
   position: absolute;
