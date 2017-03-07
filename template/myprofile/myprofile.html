@@ -10,10 +10,13 @@
                 <div class="profile-cnt">
                     <div class="profile-header">
                         <div class="profile-pic">
-                            <img src="images/profilePic.png">
+                            <!--<img src="images/profilePic.png">-->
+                            <img ng-src="{{profileCtrl.imgURL}}" class="img-circle">
+                            <br/>
+                            <a href="javascript:void(0)" class="changepiclink" ng-click="profileCtrl.showImageUploadPopup()">Change Picture</a>
                         </div>
                         <div class="profile-detail">
-                            <h3>User name</h3>
+                            <h3>{{profileCtrl.user.displayName}}</h3>
                             <p>Blogger</p>
                         </div>
                     </div>
@@ -42,6 +45,21 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="overlay" ng-show="profileCtrl.uploadImgPopUp">
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Upload profile picture</h3>
+                <i class="fa fa-times fa-lg closepopupicon" ng-click="profileCtrl.closepopup()"></i>
+            </div>
+            <div class="panel-body">
+                <progress value="0" max="100" id="uploader" class="col-sm-12">0%</progress><br/>
+				<input type="file" value="upload" id="fileButton" />
             </div>
         </div>
     </div>
