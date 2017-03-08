@@ -2,7 +2,7 @@
 .profile-pic{ position: relative;display: inline-block;width: 100px; height: 100px;overflow: hidden;border: solid 5px #fff;border-radius: 50%;}
 .changepiclink:hover{opacity: 1;}
 .changepiclink{display:table;position: absolute; left: 0; top: 0; width: 100%;height: 100%;background:rgba(136, 136, 136, 0.52); color: #fff; opacity: 0; transition: all 0.2s ease-in-out 0.2s;}
-.changepiclink span{display: table-cell;vertical-align: middle; text-align: center; padding: 20px;}
+.changepiclink span{display: table-cell;vertical-align: middle; text-align: center; padding: 20px;color: #fff;padding: 20px;font-size: 15px;text-transform: capitalize;}
 .profile-pic img{width: 100%;height: 100%;}
 .profile-detail{margin-left: 10px;display:inline-block;position: absolute; left: 50px; bottom: 40%;}
 .profile-detail h3{margin-bottom: 5px; font-family: 'brandon_grotesquemedium'; font-size: 30px;color:#fff;text-shadow: 0 0 1px rgba(57,70,78,.15), 0 20px 55px -8px rgba(57,70,78,.25);}
@@ -59,7 +59,7 @@
   -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
   animation: sk-bouncedelay 1.4s infinite ease-in-out both;
 }
-
+.loadingTxt{margin: 10px auto; text-align: center; color: #fff;}
 .spinner .bounce1 {
   -webkit-animation-delay: -0.32s;
   animation-delay: -0.32s;
