@@ -42,7 +42,7 @@ body{font-family: 'brandon_grotesque_regularRg'; font-size: 12px; background: rg
 
 /* Custom, iPhone Retina */ 
 @media(max-width:320px){
-    body {
+    body {  
         /*background-color: lime;*/
         font-size:14px;
      }
@@ -60,6 +60,7 @@ body{font-family: 'brandon_grotesque_regularRg'; font-size: 12px; background: rg
         /*background-color: aqua;*/
     }
     .menuTxt{display: none;}
+    .navbar-techBlog .navbar-nav{}
 }
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px) {
