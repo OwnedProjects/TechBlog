@@ -11,45 +11,14 @@
 .purple{background: #673ab7; color: #fff;}
 .blue{background: #0280c8; color: #fff;}
 .lightYellow{background: #fffbec; color: #333;}
-#preloader {
-    display: block;
-    width: 100%;
-    height: calc(100vh - 50px);
-    overflow: hidden;
-    position: absolute;
-    left: 0;
-    top: 50px;
-    background: #fff;
-    z-index: 9999;
-}
-
-.loader {
-  height: 50px;
-  width: 50px;
-  position: absolute;
-  left: calc(50% - 50px);
-  top: calc(50% - 50px);
-
-}
-
-.circle-loader {
-  -webkit-animation: rotate 2s linear infinite;
-  animation: rotate 2s linear infinite;
-  height: 50px;
-  left: 50%;
-  position: absolute;
-  top: 20%;
-  width: 50px;
-}
-
-.circle-loader .path {
-  stroke-dasharray: 1,200;
-  stroke-dashoffset: 0;
-  -webkit-animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
-          animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
-  stroke-linecap: round;
-  stroke: #3f88f8;
-}
+#preloader {display: block;width: 100%;height: calc(100vh - 50px);overflow: hidden;position: absolute;left: 0;top: 50px;background: #fff;z-index: 9999;}
+.loader {height: 50px;width: 50px;position: absolute;left: calc(50% - 50px);top: calc(50% - 50px);}
+.circle-loader {-webkit-animation: rotate 2s linear infinite;animation: rotate 2s linear infinite;height: 50px;left: 50%;position: absolute;top: 20%;width: 50px;}
+.circle-loader .path {stroke-dasharray: 1,200;stroke-dashoffset: 0;-webkit-animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;stroke-linecap: round;stroke: #3f88f8;}
+.noblog-alert h1{margin: 0;font-family: 'PT Sans', sans-serif; font-size: 16px;}
+.box small {height: 30px;overflow: hidden;width: 100%;display: block;}
+.box blockquote{padding: 6px 15px;}
+.blog-name{overflow: hidden;text-overflow: ellipsis;white-space: pre;width: 80px;font-size: 14px; line-height: 17px;}
 
 @keyframes rotate {
   100% {
@@ -71,13 +40,3 @@
     stroke-dashoffset: -124;
   }
 }
-
-.noblog-alert h1{margin: 0;font-family: 'PT Sans', sans-serif; font-size: 16px;}
-.box small {
-    height: 30px;
-    overflow: hidden;
-    width: 100%;
-    display: block;
-}
-.box blockquote{padding: 6px 15px;}
-.blog-name{overflow: hidden;text-overflow: ellipsis;white-space: pre;width: 80px;font-size: 14px; line-height: 17px;}
