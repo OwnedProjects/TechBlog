@@ -3,21 +3,26 @@ angular.module("TechBlog")
 
 angular.module("TechBlog")
   .component("showBlog",{
-      //templateUrl: "showBlog.html",
       //bindings: { name: '@' },
       //require: {
       //  parent: '^parentComponent'
       //},
-      controller: function () {
+      controller: function ($firebaseArray) {
             var vm = this;
             vm.BlogsData = null;
+            console.log("In component");
             vm.currentUser = firebase.auth().currentUser;
             //Fetch all blogs
-            
-            vm.currentBlogRef = firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
-                var username = snapshot.val().username;
-            });
+            vm.currentUserBlogRef = firebase.database().ref().child('/blog-post').orderByChild('userId').equalTo(vm.currentUser.uid);
+            vm.blogs = $firebaseArray(vm.currentUserBlogRef);
+            console.log(vm.blogs);    
+            // vm.currentBlogRef = firebase.database().ref('/blog-post/' + ).once('value').then(function(snapshot) {
+            //     //var username = snapshot.val().username;
+            //     console.log(snapshot.val())
+            // });
             // vm.blogsRef = firebase.database().ref().child('/blog-post');
             // vm.blogs = $firebaseArray(vm.blogsRef);
-      }
+      },
+      controllerAs: 'componentctrl',
+      templateUrl: "template/LoadBlogComponent/LoadBlogComponent.html"
   });

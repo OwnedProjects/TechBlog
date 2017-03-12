@@ -1,23 +1,18 @@
-<show-blogs>
-    <div class="col-md-3 col-sm-4 col-xs-12">
-        <a href="#" class="box">
-            <div class="box-body">
-                <h3 class="ng-binding">Welcome to Tech blog</h3>
-                <small ng-bind-html="blog.content" class="ng-binding">
-                    <p>Welcome to my blog</p>
-                    <p>This is a test blog we created</p>
-                    <p>I love this blog</p>
-                </small>
-            </div>
-            <div class="box-footer blue">
-                <ul class="list-inline pull-left">
-                    <li class="ng-binding"><i class="fa fa-thumbs-up"></i> 0</li>
-                    <li class="ng-binding"><i class="fa fa-mail-forward"></i> 0</li>
-                    <li class="ng-binding"><i class="fa fa-eye"></i> 0</li>
-                </ul>
-                <span class="pull-right blog-name ng-binding">WasimAkram Mulla</span>
-                <div class="clearfix"></div>
-            </div>
-        </a>
-    </div>
-</show-blogs>
+<br/>
+<div class="col-md-3 col-sm-4 col-xs-12 row" ng-repeat="blog in componentctrl.blogs">
+    <a href="#" class="box">
+        <div class="box-body">
+            <h3 class="ng-binding">{{blog.title}}</h3>
+            <small ng-bind-html="blog.content" class="ng-binding"></small>
+        </div>
+        <div class="box-footer blue">
+            <ul class="list-inline pull-left">
+                <li class="ng-binding"><i class="fa fa-thumbs-up"></i> {{blog.likes}}</li>
+                <li class="ng-binding"><i class="fa fa-mail-forward"></i> {{0}}</li>
+                <li class="ng-binding"><i class="fa fa-eye"></i> {{blog.views}}</li>
+            </ul>
+            <span class="pull-right blog-name ng-binding">{{blog.username}}</span>
+            <div class="clearfix"></div>
+        </div>
+    </a>
+</div>

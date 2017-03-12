@@ -89,16 +89,18 @@ function MyProfileController($firebaseArray, $rootScope, $timeout){
         vm.showImageLoader = true;
         var storageRef = firebase.storage().ref();
         storageRef.child(imgLink).getDownloadURL().then(function(url) {
-        console.log(url);
+        //console.log(url);
         $timeout(function(){
             vm.imgURL = url;
-            console.log(vm.imgURL);
             vm.showImageLoader = false;
         },100);
-        //url: https://firebasestorage.googleapis.com/v0/b/git-blog-4737d.appspot.com/o/1485767556247Lighthouse.jpg?alt=media&token=5a1c5c66-7062-4c0b-80d0-626adf2902f5
         }).catch(function(error) {
           // Handle any errors
-          console.log(error)
+          console.log(error);
+          
+        $timeout(function(){
+            vm.showImageLoader = false;
+        },100);
         });
       };
 

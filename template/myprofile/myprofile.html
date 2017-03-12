@@ -36,15 +36,16 @@
                     <div class="profile-middle">
                         <div class="tabs">
                             <ul class="list-inline" ng-click="$event.preventDefault()">
-                                <li  ng-class="{ active: profileCtrl.isSet(1) }"><a ng-click="profileCtrl.setTab(1)" href="#">Profile</a></li>
+                                <li  ng-class="{ active: profileCtrl.isSet(1) }"><a ng-click="profileCtrl.setTab(1)" href="#">My Blogs</a></li>
                                 <li  ng-class="{ active: profileCtrl.isSet(2) }"><a ng-click="profileCtrl.setTab(2)" href="#">Activity</a></li>
                                 <li  ng-class="{ active: profileCtrl.isSet(3) }"><a ng-click="profileCtrl.setTab(3)" href="#">Settings</a></li>
                             </ul>
                         </div>
                         <div class="tabs-content profile-cnt" ng-if="profileCtrl.isSet(1)">
-                            <h3>User name</h3>
-                            <p class="mutted-text">senior software engineer at clariontechnologies</p>
-                            <p class="mutted-text"><i>(Your about me is currently blank. )</i></p>
+                            <!--<h3>My Blogs</h3>-->
+                            
+                            <show-blog></show-blog>
+
                         </div>
                         <div class="tabs-content activity-cnt" ng-if="profileCtrl.isSet(2)">
                             <h3>Activity</h3>
