@@ -33,7 +33,7 @@ body{font-family: 'brandon_grotesque_regularRg'; font-size: 12px; background: rg
 .navbar-techBlog .navbar-nav>li>a:focus, 
 .navbar-techBlog .navbar-nav>li>a:hover{color:#fff; background: rgba(255,255,255, 0.24); border-radius: 2px;}
 .icon {margin-right: 5px;}
-.navbar-techBlog .navbar-nav>li{margin: 0 7px;display: inline-block;}
+.navbar-techBlog .navbar-nav>li{margin: 0;display: inline-block;}
 /* Navigation end */
 .navbar-default .navbar-toggle{border: none;}
 .navbar-default .navbar-toggle .icon-bar, .navbar-default .navbar-toggle:focus .icon-bar, .navbar-default .navbar-toggle:hover .icon-bar{background: #fff;}
