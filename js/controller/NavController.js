@@ -8,11 +8,17 @@ function NavController($rootScope, $location){
     vm.init = init;
     $rootScope.menuValue = null; 
     vm.logout = logout;
+    vm.loadProfile = loadProfile;
 
     function init(){
         if(!$rootScope.user){
             $location.path('allblog');
         }
+    };
+
+    function loadProfile(){
+        sessionStorage.setItem("profileUser", $rootScope.user.uid);
+        $location.path("/myprofile");
     };
 
     function logout(){

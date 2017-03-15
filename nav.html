@@ -13,7 +13,7 @@
 			<ul class="nav navbar-nav navbar-right">
 				<li ng-class="{'active': menuValue == '/allblog'}" ng-if="user"><a href="#/allblog"><i class="icon fa fa-list-alt fa-lg"></i><span class="menuTxt">All Blogs</span></a></li>
 				<li ng-class="{'active': menuValue == '/addblog'}" ng-if="user"><a href="#/addblog"><i class="icon fa fa-commenting fa-lg"></i><span class="menuTxt">Add Blog</span></a></li>
-				<li><a href="#/myprofile" ng-if="user"><i class="icon fa  fa-user-circle fa-lg"></i><span class="menuTxt">My Profile</span></a></li>
+				<li><a href="javascript:void(0)" ng-if="user" ng-click="navctrl.loadProfile();"><i class="icon fa  fa-user-circle fa-lg"></i><span class="menuTxt">My Profile</span></a></li>
 				<li><a href="javascript:void(0)" ng-click="navctrl.logout()" ng-if="user"><i class="icon fa fa-power-off fa-lg"></i> <span class="menuTxt">Logout</span></a></li>
 			</ul>
 		</div>

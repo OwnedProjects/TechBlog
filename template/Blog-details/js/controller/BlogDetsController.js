@@ -15,6 +15,7 @@ function BlogDetsController($firebaseArray, $rootScope, $location, $routeParams,
     vm.init = init;
     vm.postComment = postComment;
     vm.writeAComment = writeAComment;
+    vm.loadProfile = loadProfile;
 
     function init(){
         vm.user = $rootScope.user;
@@ -32,6 +33,11 @@ function BlogDetsController($firebaseArray, $rootScope, $location, $routeParams,
             .catch(function(err){
                 console.log("Error: ", err)
             });
+    };
+
+    function loadProfile(profUid){
+        sessionStorage.setItem("profileUser", profUid);
+        $location.path("/myprofile");
     };
 
     function postComment(){

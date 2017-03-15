@@ -13,7 +13,7 @@
                             <h1 class="question-heading"><span class="question-hyperlink">{{blogDetsCtrl.blogdets.title}}</span></h1>
                         </div>
                         <div class="col-sm-5 text-right">
-                            <a href="#" class="blog-poster">
+                            <a href="javascript:void(0)" class="blog-poster" ng-click="blogDetsCtrl.loadProfile(blogDetsCtrl.blogdets.userId)">
                                 <span>{{blogDetsCtrl.blogdets.username}}</span>
                                 <!--<img src="{{blogDetsCtrl.blogdets.userPic}}" />-->
                             </a>
@@ -52,7 +52,7 @@
                                 </div>-->
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <strong>{{comment.username}}</strong> <span class="text-muted">{{comment.cmntdate | date: "dd-MM-yyyy HH:mm"}}</span>
+                                        <a href="javascript:void(0)"  ng-click="blogDetsCtrl.loadProfile(comment.userId)"><strong>{{comment.username}}</strong></a> <span class="text-muted">{{comment.cmntdate | date: "dd-MM-yyyy HH:mm"}}</span>
                                     </div>
                                     <div class="panel-body" ng-bind-html="comment.comment"> Panel content  </div><!-- /panel-body -->
                                 </div>

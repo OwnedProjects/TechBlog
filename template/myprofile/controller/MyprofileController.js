@@ -8,6 +8,8 @@ function MyProfileController($firebaseArray, $rootScope, $timeout){
     vm.tab = 1;
     vm.uploadImgPopUp = false;
     vm.imgURL = null;
+    vm.profileUser = null;
+    vm.selfProfile = false;
     vm.init = init;
     vm.setTab = setTab;
     vm.isSet = isSet;
@@ -20,8 +22,16 @@ function MyProfileController($firebaseArray, $rootScope, $timeout){
     function init(){
       vm.setTab(1);
       vm.user = $rootScope.user;
-      vm.image_upload();
-      vm.getImageURL(vm.user.uid);
+      vm.profileUser = sessionStorage.getItem("profileUser");
+      sessionStorage.removeItem("profileUser");
+      if(vm.profileUser == vm.user.uid){
+          vm.selfProfile = true;
+          vm.image_upload();
+      }
+      else{
+        vm.selfProfile = false;
+      }
+      vm.getImageURL(vm.profileUser);
     }
 
     function setTab(newTab){
