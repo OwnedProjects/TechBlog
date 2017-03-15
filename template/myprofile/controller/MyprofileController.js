@@ -24,6 +24,18 @@ function MyProfileController($firebaseArray, $rootScope, $timeout){
       vm.user = $rootScope.user;
       vm.profileUser = sessionStorage.getItem("profileUser");
       sessionStorage.removeItem("profileUser");
+      
+      vm.userRef = firebase.database().ref().child('/users').orderByChild('uid').equalTo(vm.profileUser);
+      vm.userData = $firebaseArray(vm.userRef);
+      vm.userData.$loaded()
+            .then(function(snapshot){
+                vm.userDets = snapshot[0];
+                console.log(vm.userDets);
+            })
+            .catch(function(err){
+                console.log("Error: ", err)
+            });
+
       if(vm.profileUser == vm.user.uid){
           vm.selfProfile = true;
           vm.image_upload();
