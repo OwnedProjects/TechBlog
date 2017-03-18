@@ -20,7 +20,7 @@ body{font-family: 'brandon_grotesque_regularRg'; font-size: 12px; background: rg
 
 /* Navigation star */
 .navbar-techBlog{color:#fff;min-height:inherit; height:auto; background: #0280c8; border:none; border-bottom: solid 2px #d7d7d7;border-radius: 0;margin-bottom: 0;}
-.navbar-techBlog .navbar-brand{color: #fff;text-transform: uppercase;font-family: 'brandon_grotesquemedium';}
+.navbar-techBlog .navbar-brand{color: #fff;text-transform: uppercase;font-family: 'brandon_grotesquemedium';padding: 20px 15px; height: auto;}
 .navbar-techBlog .navbar-brand:focus, .navbar-techBlog .navbar-brand:hover{color: rgba(255,255,255, .6)}
 .navbar-techBlog .navbar-brand span.rightSpan{ margin-left: 0px; vertical-align: top; display: inline-block; margin-top: -2px;}
 .navbar-techBlog .navbar-brand span.leftSpan{margin-right: 3px;vertical-align: top;display: inline-block;margin-top: -2px;}
