@@ -48,7 +48,7 @@ function AllBlogController($firebaseArray, $rootScope, $location){
         }
 
         //Fetch all blogs
-        vm.blogsRef = firebase.database().ref().child('/blog-post');
+        vm.blogsRef = firebase.database().ref().child('/blog-post').orderByChild('approvalStatus').equalTo('approved');
         vm.blogs = $firebaseArray(vm.blogsRef);
 
         vm.blogs.$loaded()

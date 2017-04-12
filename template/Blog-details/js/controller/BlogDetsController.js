@@ -8,8 +8,11 @@ function BlogDetsController($firebaseArray, $rootScope, $location, $routeParams,
     var vm = this;
     vm.blogdets = null;
     vm.blogid = null;
+    vm.currentUser = null;
+    vm.userDets = null;
     vm.user = null;
     vm.showcommentSection = false;
+	vm.showReviewerBtns = false;
     vm.commentRef = null;
     vm.comments = null;
     vm.init = init;
@@ -19,6 +22,17 @@ function BlogDetsController($firebaseArray, $rootScope, $location, $routeParams,
 
     function init(){
         vm.user = $rootScope.user;
+		vm.currentUser = firebase.auth().currentUser;
+        vm.userRef = firebase.database().ref().child('/users').orderByChild('uid').equalTo(vm.currentUser.uid);
+		vm.userData = $firebaseArray(vm.userRef);
+		vm.userData.$loaded()
+            .then(function(snapshot){
+                vm.userDets = snapshot[0];
+			})
+			.catch(function(err){
+				console.log(err)
+			});
+		
         vm.rootRef = firebase.database().ref().child('/blog-post').orderByChild('bloglink').equalTo($routeParams.blogId);
         vm.blogdata = $firebaseArray(vm.rootRef);
         vm.blogdata.$loaded()
@@ -26,9 +40,16 @@ function BlogDetsController($firebaseArray, $rootScope, $location, $routeParams,
                 vm.blogdets = snapshot[0];
                 vm.blogid = snapshot[0].blogid;
 
+				if(vm.userDets.rank == 'reviewer' && vm.currentUser.uid != vm.blogdets.userId && vm.blogdets.approvalStatus!='approved')
+				{
+					vm.showReviewerBtns = true;
+				}else{
+					vm.showReviewerBtns = false;
+				}
+			
                 vm.commentRef = firebase.database().ref().child('/blog-comments').orderByChild('blogid').equalTo(vm.blogid);
                 vm.comments = $firebaseArray(vm.commentRef);
-                console.log(vm.comments);
+                //console.log(vm.comments);
             })
             .catch(function(err){
                 console.log("Error: ", err)

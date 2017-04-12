@@ -28,5 +28,5 @@ angular.module("TechBlog")
             // vm.blogs = $firebaseArray(vm.blogsRef);
       },
       controllerAs: 'componentctrl',
-      templateUrl: "template/My-profile/component/BlogComponent.html"
+      templateUrl: "template/My-profile/js/component/BlogComponent.html"
   });

@@ -1,0 +1,10 @@
+.question-header{
+	padding:10px;
+	cursor:pointer;
+	background:#efefef;
+	border-radius:5px;
+	margin-bottom:10px;
+}
+.question-header:hover{
+	background:#ddd;
+}

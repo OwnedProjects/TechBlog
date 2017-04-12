@@ -43,7 +43,9 @@ angular.module("TechBlog", ["ngRoute", "textAngular", "firebase"])
 			controllerAs: "profileCtrl"
 		  }).
 		  when("/review", {
-			templateUrl: 'template/Reviewer/Reviewer.html'
+			templateUrl: 'template/Reviewer/Reviewer.html',
+			controller: "ReviewerController",
+			controllerAs: "reviewCtrl"
 		  }).
 		  otherwise({
 			redirectTo: "/login"

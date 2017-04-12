@@ -11,6 +11,12 @@
                     <div class="row">
                         <div class="col-sm-7">
                             <h1 class="question-heading"><span class="question-hyperlink">{{blogDetsCtrl.blogdets.title}}</span></h1>
+							<div ng-if="blogDetsCtrl.showReviewerBtns == true">
+							<button class="btn btn-sm btn-success"><i class="fa fa-check"></i> Approve</button>
+							<button class="btn btn-sm btn-danger"><i class="fa fa-times"></i>  Reject</button>
+							<br/>
+							<br/>
+							</div>
                         </div>
                         <div class="col-sm-5 text-right">
                             <a href="javascript:void(0)" class="blog-poster" ng-click="blogDetsCtrl.loadProfile(blogDetsCtrl.blogdets.userId)">
