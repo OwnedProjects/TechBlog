@@ -1,7 +1,7 @@
 <div class="row">
 <br/>
 <div class="col-md-3 col-sm-4 col-xs-12" ng-repeat="blog in componentctrl.blogs">
-    <a href="#" class="box">
+    <a href="#/blogdetails/{{blog.bloglink}}" class="box">
         <div class="box-body">
             <h3 class="ng-binding">{{blog.title}}</h3>
             <small ng-bind-html="blog.content" class="ng-binding"></small>
