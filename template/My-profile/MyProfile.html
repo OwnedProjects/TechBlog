@@ -1,22 +1,10 @@
 <div class="container">
-    <!--<div class="row">
-        <div class="col-sm-12">
-            <h1 class="page-title">My Profile</h1>
-        </div>
-    </div>-->
     <div class="myProfile-cnt">
         <div class="row">
             <div class="col-sm-12">
                 <div class="profile-cnt">
                     <div class="profile-header">
                             <img ng-src="{{profileCtrl.imgURL}}" class="img-responsive">
-                        <!--<div class="profile-pic">
-                            <img ng-src="{{profileCtrl.imgURL}}" class="img-circle">
-                            <br/>
-                            <a href="javascript:void(0)" class="changepiclink" ng-click="profileCtrl.showImageUploadPopup()">
-                                <span>Change Picture</span>
-                            </a>
-                        </div>-->
                         <div ng-show="profileCtrl.showImageLoader" >
                             <div class="loadingTxt">Please Wait</div>
                             <div class="spinner">
@@ -44,7 +32,7 @@
                         <div class="tabs-content profile-cnt" ng-if="profileCtrl.isSet(1)">
                             <!--<h3>My Blogs</h3>-->
                             
-                            <show-blog></show-blog>
+                            <show-blog userid="{{profileCtrl.userDets.uid}}"></show-blog>
 
                         </div>
                         <div class="tabs-content activity-cnt" ng-if="profileCtrl.isSet(2)">

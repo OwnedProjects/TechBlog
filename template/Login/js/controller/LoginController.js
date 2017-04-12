@@ -29,7 +29,7 @@ function LoginController($firebaseArray, $location, $rootScope, $timeout){
             firebase.auth().onAuthStateChanged(vm.onAuthStateChanged);
         })
         .catch(function(err){
-            console.log(err.message);
+            alert(err.message);
         });
     }
 

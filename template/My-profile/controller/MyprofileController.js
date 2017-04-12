@@ -30,7 +30,7 @@ function MyProfileController($firebaseArray, $rootScope, $timeout){
       vm.userData.$loaded()
             .then(function(snapshot){
                 vm.userDets = snapshot[0];
-                console.log(vm.userDets);
+                //console.log(vm.userDets);
             })
             .catch(function(err){
                 console.log("Error: ", err)

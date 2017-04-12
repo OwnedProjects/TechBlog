@@ -74,7 +74,7 @@ function AddBlogController($firebaseArray, $rootScope, $location, $timeout){
             "userPic": $rootScope.user.photoURL,
             "views": 0,
             "likes": 0,
-            "approvalStatus": "pending",
+            "approvalStatus": "approved",
 			"blogdate": dt.getTime()
 		};
         console.log(postData)

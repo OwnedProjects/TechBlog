@@ -38,7 +38,7 @@ angular.module("TechBlog", ["ngRoute", "textAngular", "firebase"])
 			controllerAs: "blogDetsCtrl"
 		  }).
 		  when("/myprofile", {
-			templateUrl: 'template/Myprofile/Myprofile.html',
+			templateUrl: 'template/My-profile/MyProfile.html',
 			controller: "MyProfileController",
 			controllerAs: "profileCtrl"
 		  }).
