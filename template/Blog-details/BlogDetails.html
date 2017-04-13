@@ -26,6 +26,16 @@
                             <ul class="list-inline questionDetail">
                                 <li><span class="labelTxt">Asked on</span><span class="label-input">{{blogDetsCtrl.blogdets.blogdate | date:"dd-MM-yyyy HH:mm"}}</span></li>
                             </ul>
+                            <ul class="list-inline questionDetail">
+                                <li ng-if="blogDetsCtrl.showReviewer == true"><span class="labelTxt">Reviewer</span><span class="label-input">{{blogDetsCtrl.reviewerDets.displayName}}</span></li>
+                            </ul>
+                            <ul class="list-inline questionDetail">
+                                <li ng-if="blogDetsCtrl.showReviewer == true">
+									<span class="label-input">
+										<a href="javascript:void(0)" ng-click="blogDetsCtrl.changeMyReviewer()">Change my reviewer <i class="fa fa-refresh" aria-hidden="true"></i></a>
+									</span>
+								</li>
+                            </ul>
                             <div class="clearfix"></div>
                         </div>
                         <div class="clearfix"></div>

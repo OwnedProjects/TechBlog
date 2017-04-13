@@ -24,9 +24,14 @@
                     <div class="profile-middle">
                         <div class="tabs">
                             <ul class="list-inline" ng-click="$event.preventDefault()">
-                                <li  ng-class="{ active: profileCtrl.isSet(1) }"><a ng-click="profileCtrl.setTab(1)" href="#">My Blogs</a></li>
-                                <li  ng-class="{ active: profileCtrl.isSet(2) }"><a ng-click="profileCtrl.setTab(2)" href="#">Activity</a></li>
-                                <li  ng-class="{ active: profileCtrl.isSet(3) }"><a ng-click="profileCtrl.setTab(3)" href="#">Settings</a></li>
+                                <li ng-class="{ active: profileCtrl.isSet(1) }">
+									<a ng-click="profileCtrl.setTab(1)" href="#">
+										<span ng-if="profileCtrl.selfProfile == true">My Blogs</span>
+										<span ng-if="profileCtrl.selfProfile == false">User Blogs</span>
+									</a>
+								</li>
+                                <li ng-class="{ active: profileCtrl.isSet(2) }"><a ng-click="profileCtrl.setTab(2)" href="#">Activity</a></li>
+                                <li ng-class="{ active: profileCtrl.isSet(3) }"><a ng-click="profileCtrl.setTab(3)" href="#">Settings</a></li>
                             </ul>
                         </div>
                         <div class="tabs-content profile-cnt" ng-if="profileCtrl.isSet(1)">
