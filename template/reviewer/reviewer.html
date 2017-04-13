@@ -15,6 +15,16 @@
 			</div>
 		</div>
         <div class="row">
+            <div class="col-sm-12" ng-if="reviewCtrl.noBlogsAvailable == true">
+                <div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h4><span class="question-hyperlink text-primary"><i class="fa fa-exclamation-triangle"></i> Currently there are no blogs to be reviewed. Thanks being a great part of the Reviewer Team, we appreciate your help.</span></h4>
+                        </div>
+					</div>
+				</div>
+			</div>
+						
             <div class="col-sm-12" ng-repeat="blog in reviewCtrl.blogs">
                 <div class="question-header" ng-click="reviewCtrl.loadBlogDetail(blog)">
                     <div class="row">

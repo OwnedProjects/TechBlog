@@ -1,11 +1,12 @@
 angular.module("TechBlog")
 	.controller("ReviewerController", ReviewerController);
 
-ReviewerController.$inject = ["$firebaseArray","$rootScope", "$location"];
+ReviewerController.$inject = ["$firebaseArray","$rootScope", "$location", "$timeout"];
 
-function ReviewerController($firebaseArray, $rootScope, $location){
+function ReviewerController($firebaseArray, $rootScope, $location, $timeout){
     var vm = this;
 	vm.preloader = true;
+	vm.noBlogsAvailable = false;
     vm.loadBlogDetail = loadBlogDetail;
     vm.init = init;
 	
@@ -14,13 +15,15 @@ function ReviewerController($firebaseArray, $rootScope, $location){
         if(!user){
             $location.path('/');
         }
-        else{
+        else{			
 			vm.blogsRef = firebase.database().ref().child('/blog-post').orderByChild('approvalStatus').equalTo('pending');
 			vm.blogs = $firebaseArray(vm.blogsRef);
 
 			vm.blogs.$loaded()
 				.then(function(response){
-					console.log(vm.blogs.length)
+					if(vm.blogs.length <= 0){
+						vm.noBlogsAvailable = true;
+					}
 					vm.preloader = false;
 				})
 				.catch(function(err){

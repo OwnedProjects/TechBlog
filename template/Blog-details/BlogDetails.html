@@ -12,8 +12,8 @@
                         <div class="col-sm-7">
                             <h1 class="question-heading"><span class="question-hyperlink">{{blogDetsCtrl.blogdets.title}}</span></h1>
 							<div ng-if="blogDetsCtrl.showReviewerBtns == true">
-							<button class="btn btn-sm btn-success"><i class="fa fa-check"></i> Approve</button>
-							<button class="btn btn-sm btn-danger"><i class="fa fa-times"></i>  Reject</button>
+							<button class="btn btn-sm btn-success" ng-click="blogDetsCtrl.approveBlog()"><i class="fa fa-check"></i> Approve</button>
+							<button class="btn btn-sm btn-danger" ng-click="blogDetsCtrl.rejectBlog()" ng-if="blogDetsCtrl.hideRejectedBtn != true"><i class="fa fa-times"></i>  Reject</button>
 							<br/>
 							<br/>
 							</div>

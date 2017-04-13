@@ -13,12 +13,15 @@ function BlogDetsController($firebaseArray, $rootScope, $location, $routeParams,
     vm.user = null;
     vm.showcommentSection = false;
 	vm.showReviewerBtns = false;
+	vm.hideRejectedBtn = false;
     vm.commentRef = null;
     vm.comments = null;
     vm.init = init;
     vm.postComment = postComment;
     vm.writeAComment = writeAComment;
     vm.loadProfile = loadProfile;
+    vm.approveBlog = approveBlog;
+    vm.rejectBlog = rejectBlog;
 
     function init(){
         vm.user = $rootScope.user;
@@ -43,6 +46,9 @@ function BlogDetsController($firebaseArray, $rootScope, $location, $routeParams,
 				if(vm.userDets.rank == 'reviewer' && vm.currentUser.uid != vm.blogdets.userId && vm.blogdets.approvalStatus!='approved')
 				{
 					vm.showReviewerBtns = true;
+					if(vm.blogdets.approvalStatus == 'rejected'){
+						vm.hideRejectedBtn = true;
+					}
 				}else{
 					vm.showReviewerBtns = false;
 				}
@@ -90,5 +96,45 @@ function BlogDetsController($firebaseArray, $rootScope, $location, $routeParams,
         }
     }
     
+	function approveBlog(){
+		vm.rootRef = firebase.database().ref().child('/blog-post').orderByChild('bloglink').equalTo($routeParams.blogId);
+        vm.blogdata = $firebaseArray(vm.rootRef);
+		vm.blogdata.$loaded()
+            .then(function(snapshot){
+				var list = snapshot;
+				list[0].approvalStatus = "approved";
+				list.$save(0).then(function(ref) {
+					vm.showReviewerBtns = false;
+					alert("Blog approved");
+				})
+				.catch(function(err){
+					console.log("blog update error: ", err);
+				});
+			})
+			.catch(function(err){
+				console.log(err)
+			});
+	};
+	
+	function rejectBlog(){
+		vm.rootRef = firebase.database().ref().child('/blog-post').orderByChild('bloglink').equalTo($routeParams.blogId);
+        vm.blogdata = $firebaseArray(vm.rootRef);
+		vm.blogdata.$loaded()
+            .then(function(snapshot){
+				var list = snapshot;
+				list[0].approvalStatus = "rejected";
+				list.$save(0).then(function(ref) {
+					vm.showReviewerBtns = true;
+					vm.hideRejectedBtn = true;
+					alert("Blog rejected");
+				})
+				.catch(function(err){
+					console.log("blog update error: ", err);
+				});
+			})
+			.catch(function(err){
+				console.log(err)
+			});
+	};
     vm.init();
 }
