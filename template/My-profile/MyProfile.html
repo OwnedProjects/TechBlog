@@ -13,12 +13,12 @@
                                 <div class="bounce3"></div>
                             </div>
                         </div>
-                        <a href="javascript:void(0)" class="changepiclink" ng-click="profileCtrl.showImageUploadPopup()">
+                        <a href="javascript:void(0)" class="changepiclink" ng-click="profileCtrl.showImageUploadPopup()" ng-if="profileCtrl.selfProfile == true">
                             <span>Change Picture</span>
                         </a>
                         <div class="profile-detail">
                             <h3>{{profileCtrl.userDets.displayName}}</h3>
-                            <p>Blogger</p>
+                            <p>{{profileCtrl.userDets.rank | uppercase}}</p>
                         </div>
                     </div>
                     <div class="profile-middle">
@@ -30,7 +30,9 @@
 										<span ng-if="profileCtrl.selfProfile == false">User Blogs</span>
 									</a>
 								</li>
-                                <li ng-class="{ active: profileCtrl.isSet(2) }"><a ng-click="profileCtrl.setTab(2)" href="#">Activity</a></li>
+                                <li ng-class="{ active: profileCtrl.isSet(2) }">
+									<a ng-click="profileCtrl.setTab(2)" href="javascript:void(0)">About Me</a>
+								</li>
                                 <li ng-class="{ active: profileCtrl.isSet(3) }"><a ng-click="profileCtrl.setTab(3)" href="#">Settings</a></li>
                             </ul>
                         </div>
@@ -41,9 +43,10 @@
 
                         </div>
                         <div class="tabs-content activity-cnt" ng-if="profileCtrl.isSet(2)">
-                            <h3>Activity</h3>
-                            <p class="mutted-text">senior software engineer at clariontechnologies</p>
-                            <p class="mutted-text"><i>(Your about me is currently blank. )</i></p>
+                            
+                            <h3>{{profileCtrl.userDets.displayName}}</h3>
+                            <p class="capitalize">Rank: <strong>{{profileCtrl.userDets.rank}}</strong></p>
+                            <p>Trophies: <strong>{{profileCtrl.userDets.trophies}}</strong></p>
                         </div>
                         <div class="tabs-content settings-cnt" ng-if="profileCtrl.isSet(3)">
                             <h3>Setting</h3>

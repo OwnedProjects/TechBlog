@@ -21,7 +21,13 @@
 .tabs-content{padding: 0 20px 20px;}
 .profile-cnt p{margin-bottom: 0;}
 .mutted-text{font-size: 14px; color: #999;}
-
+.profile-blog-status{
+    background: #ff6347;
+    color: #fff;
+    padding: 0px 10px;
+    position: absolute;
+    right: 0;
+}
 .overlay{
 	position: fixed;
 	top: 0px;
@@ -30,7 +36,9 @@
 	width: 100%;
 	background: rgba(0,0,0,0.4);
 }
-
+.capitalize{
+	text-transform: capitalize;
+}
 .overlay .panel{
 	margin-top:100px;
 }
