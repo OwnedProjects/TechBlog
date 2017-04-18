@@ -6,7 +6,9 @@ pre{border: none;border-radius: 0;}
 .label-input{font-family: 'Roboto', sans-serif; font-size: 14px;}
 .blog-like-dislike{margin: 10px 0 0; float: left;}
 .blog-like-dislike li{margin-right: 10px;}
-.blog-like-dislike li a{font-size: 12px; color:#999;}
+.blog-like-dislike li a{font-size: 12px; color:#222;}
+.blog-like-dislike li a.disabled{font-size: 12px; color:#999;}
+.blog-like-dislike li a.blog-like, .blog-like-dislike li a.blog-dislike{font-size: 12px; color:#fa8072;}
 .blog-poster{font-family: 'Roboto', sans-serif;font-size: 20px;display: block; text-align: right;}
 .blog-poster img{width: 60px; height: 60px;border-radius: 50%;}
 .blog-poster span{margin-right: 8px;}
@@ -44,3 +46,13 @@ form.add-comment-form .form-control:focus{border-bottom: solid 2px #0280c8;}
 .comment-cnt .panel-heading{padding-bottom: 0;background: transparent;border-color: transparent;border-radius: 0;background: transparent;margin-bottom: 0;}
 .btn-red{color:#fff; float:right; margin-left: 10px;background: #db4a39;border-radius: 0;}
 .btn-red:hover{color:#fff; background: rgba(219, 74, 57, 0.87);}
+
+.vote-progress{
+    margin-left: 0px;
+    list-style: none;
+    padding-left: 0px;
+    width: 200px;
+}
+.vote-progress .progress{
+	height: 10px;
+}

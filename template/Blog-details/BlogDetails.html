@@ -51,12 +51,33 @@
                     <div class="row">
                         <hr/>
                         <ul class="list-inline blog-like-dislike">
-                            <li><a href="javascript:void(0);"><i class="fa fa-thumbs-up fa-lg"></i> <span class="text-right">{{blogDetsCtrl.blogdets.likes}}</span></a></li>
-                            <li><a href="#"><i class="fa fa-thumbs-down fa-lg"></i> <span>&nbsp;</span></a></li>
-                            <li><a href="#"><i class="fa fa-eye fa-lg"></i> <span>&nbsp;</span></a></li>
-                            <li><a href="#"><i class="fa fa-mail-reply fa-lg"></i> <span>&nbsp;</span></a></li>
+                            <li>
+								<a href="javascript:void(0);" ng-click="blogDetsCtrl.voteUp()" ng-class="{'disabled': blogDetsCtrl.selfProfile == true, 'blog-like': blogDetsCtrl.votes.likes == true}">
+									<i class="fa fa-thumbs-up fa-lg"></i> 
+									<span class="text-right">{{blogDetsCtrl.blogdets.likes}}</span>
+								</a>
+							</li>
+                            <li>
+								<a href="javascript:void(0)" ng-click="blogDetsCtrl.voteDown()" ng-class="{'disabled': blogDetsCtrl.selfProfile == true, 'blog-dislike': blogDetsCtrl.votes.dislikes == true}">
+									<i class="fa fa-thumbs-down fa-lg"></i>
+									<span>{{blogDetsCtrl.blogdets.dislikes}}</span>
+								</a>
+							</li>
+                            <li><a href="javascript:void(0)" ng-class="{'disabled': blogDetsCtrl.selfProfile == true}"><i class="fa fa-eye fa-lg"></i> <span class="text-right">{{blogDetsCtrl.blogdets.views}}</span></a></li>
+                            <li><a href="javascript:void(0)" ng-class="{'disabled': blogDetsCtrl.selfProfile == true}"><i class="fa fa-mail-reply fa-lg"></i> <span class="text-right">{{blogDetsCtrl.comments.length}}</span></a></li>
                         </ul>
                         <button class="btn btn-blue" ng-click="blogDetsCtrl.writeAComment()">Write a comment</button>
+
+                        <div class="clearfix"></div>
+						<ul class="vote-progress" ng-show="!blogDetsCtrl.noVotesYet">
+                            <li>
+								<div class="progress">
+									<div class="progress-bar progress-bar-success" ng-style="blogDetsCtrl.positiveLikes"><span class="sr-only"></span></div>
+									<div class="progress-bar progress-bar-danger" ng-style="blogDetsCtrl.negativeLikes"><span class="sr-only"></span></div>
+								</div>
+							</li>
+						</ul>
+						
                         <div class="clearfix"></div>
                         <hr/>
                     </div>
