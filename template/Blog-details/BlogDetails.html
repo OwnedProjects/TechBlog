@@ -27,7 +27,7 @@
                                 <li><span class="labelTxt">Asked on</span><span class="label-input">{{blogDetsCtrl.blogdets.blogdate | date:"dd-MM-yyyy HH:mm"}}</span></li>
                             </ul>
                             <ul class="list-inline questionDetail">
-                                <li ng-if="blogDetsCtrl.showReviewer == true"><span class="labelTxt">Reviewer</span><span class="label-input">{{blogDetsCtrl.reviewerDets.displayName}}</span></li>
+                                <li ng-if="blogDetsCtrl.showReviewer == true"><span class="labelTxt">Reviewer</span><strong class="label-input">{{blogDetsCtrl.reviewerDets.displayName}}</strong></li>
                             </ul>
                             <ul class="list-inline questionDetail">
                                 <li ng-if="blogDetsCtrl.showReviewer == true">
