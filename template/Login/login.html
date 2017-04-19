@@ -6,40 +6,25 @@
   <div class="panel login-panel">
     <div class="panel-body">
 
-      <div class="row">
-
-        <div class="col-sm-12 col-xs-12">
-          <!--<div class="col-sm-12">
-              <button class="button btn-block facebook" disabled><span><i class="fa fa-facebook"></i></span><p>Facebook</p></button>
-          </div>
-          <div class="col-sm-12">
-              <button class="button btn-block twitter"><span><i class="fa fa-twitter"></i></span><p>Twitter</p></button>
-          </div>-->
-          <div class="col-sm-12">
-              <button class="button btn-block google" ng-click="loginctrl.googleLogin()"><span><i class="fa fa-google"></i></span><p>Google </p></button>
-          </div>
-        </div>
-
-        <!--<div class="col-sm-6 col-xs-12 login-form-cnt">
-          <form class="form-horizontal login-form">
-            <fieldset>
-              <div class="login-form-group" ng-class="{'active':uname==true,'normal':uname==false}">
-                <label>User Name</label>
-                <input id="username" name="username" type="text" ng-focus="uname=true" ng-blur="uname=false" class="form-control input-md">
-              </div>
-              <div class="login-form-group" ng-class="{'active':active==true,'normal':active==false}">
-                <label>Password</label>
-                <input id="Password" name="Password" type="text" ng-focus="active=true" ng-blur="active=false" class="form-control input-md mt20">
-              </div>
-                <div class="spacing"><a href="#"> Forgot Password?</a><br/></div>
-                <button id="login" disabled="disabled" name="singlebutton" class="btn pull-right signIn">Sign In</button>
-
-
-            </fieldset>
-          </form>
-        </div>-->
-
-      </div>
+		<div class="row">
+			<div class="col-sm-12 col-xs-12">
+			  <!--<div class="col-sm-12">
+				  <button class="button btn-block facebook" disabled><span><i class="fa fa-facebook"></i></span><p>Facebook</p></button>
+			  </div>
+			  <div class="col-sm-12">
+				  <button class="button btn-block twitter"><span><i class="fa fa-twitter"></i></span><p>Twitter</p></button>
+			  </div>-->
+			  <div class="col-sm-12">
+				  <button class="button btn-block google" ng-click="loginctrl.googleLogin()"><span><i class="fa fa-google"></i></span><p>Google </p></button>
+			  </div>
+			</div>
+		</div>
+	  
+		<div class="row align-center" ng-if="loginctrl.loader == true">
+			<div class="col-md-12 col-xs-12 text-primary">
+				<h4><i class="fa fa-spinner fa-pulse"></i> Please wait... checking login.</h4>
+			</div>
+		</div>
 
     </div>
   </div>

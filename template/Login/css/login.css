@@ -64,3 +64,6 @@
 .signIn:hover{background: #e74c3c;}
 .signIn[disabled="disabled"]:hover{background:#bdc3c7;}
 .login-form-cnt{border-left: solid 1px #f5f5f5;}
+.align-center{
+	text-align: center;
+}
