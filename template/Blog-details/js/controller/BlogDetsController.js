@@ -269,9 +269,6 @@ function BlogDetsController($firebaseArray, $rootScope, $location, $routeParams,
 						vm.blogdata.$loaded()
 							.then(function(blogsnapshot){
 								var list = blogsnapshot;
-								if(list[0].dislikes > 0){
-									list[0].dislikes = list[0].dislikes - 1;
-								}
 								list[0].likes = list[0].likes + 1;
 								list.$save(0).then(function(ref) {
 									//console.log("Likes count updated");
@@ -350,9 +347,6 @@ function BlogDetsController($firebaseArray, $rootScope, $location, $routeParams,
 							vm.blogdata.$loaded()
 							.then(function(blogsnapshot){
 								var list = blogsnapshot;
-								if(list[0].dislikes > 0){
-									list[0].dislikes = list[0].dislikes - 1;
-								}
 								list[0].likes = list[0].likes + 1;
 								list.$save(0).then(function(ref) {
 									//console.log("Likes count updated");
@@ -404,9 +398,6 @@ function BlogDetsController($firebaseArray, $rootScope, $location, $routeParams,
 						vm.blogdata.$loaded()
 							.then(function(blogsnapshot){
 								var list = blogsnapshot;
-								if(list[0].likes > 0){
-									list[0].likes = list[0].likes - 1;
-								}
 								list[0].dislikes = list[0].dislikes + 1;
 								list.$save(0).then(function(ref) {
 									//console.log("dislikes count updated");
@@ -484,9 +475,6 @@ function BlogDetsController($firebaseArray, $rootScope, $location, $routeParams,
 							vm.blogdata.$loaded()
 							.then(function(blogsnapshot){
 								var list = blogsnapshot;
-								if(list[0].likes > 0){
-									list[0].likes = list[0].likes - 1;
-								}
 								list[0].dislikes = list[0].dislikes + 1;
 								list.$save(0).then(function(ref) {
 									//console.log("dislikes count updated");
