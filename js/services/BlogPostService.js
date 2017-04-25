@@ -5,9 +5,9 @@ BlogPostService.$inject = ["$firebaseArray", "$timeout", "$q"];
 
 function BlogPostService($firebaseArray, $timeout, $q){
     var vm = this;
-	vm.getBlogDataBlogPost = getBlogDataBlogPost;	
+	vm.getBlogDataOrderByBloglink = getBlogDataOrderByBloglink;	
 	
-	function getBlogDataBlogPost(blogId){
+	function getBlogDataOrderByBloglink(blogId){
 		return $q(function(resolve, reject) {
 			var rootRef = firebase.database().ref().child('/blog-post').orderByChild('bloglink').equalTo(blogId);
 			var blogdata = $firebaseArray(rootRef);

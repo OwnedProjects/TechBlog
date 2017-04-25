@@ -1,9 +1,9 @@
 angular.module("TechBlog")
 	.controller("BlogDetsController", BlogDetsController);
 
-BlogDetsController.$inject = ["$firebaseArray", "UserService", "BlogPostService", "$rootScope", "$location", "$routeParams", "$timeout"];
+BlogDetsController.$inject = ["$firebaseArray", "UserService", "BlogPostService", "BlogCommentService", "$rootScope", "$location", "$routeParams", "$timeout"];
 
-function BlogDetsController($firebaseArray, UserService, BlogPostService, $rootScope, $location, $routeParams, $timeout){
+function BlogDetsController($firebaseArray, UserService, BlogPostService, BlogCommentService, $rootScope, $location, $routeParams, $timeout){
     // variables defined
     var vm = this;
     vm.blogdets = null;
@@ -40,10 +40,10 @@ function BlogDetsController($firebaseArray, UserService, BlogPostService, $rootS
     function init(){
         vm.user = $rootScope.user;
 		vm.currentUser = firebase.auth().currentUser;
-		UserService.getUserDets(vm.currentUser.uid)
+		UserService.getUserDetsOrderByUID(vm.currentUser.uid)
 			.then(function(response){
 				vm.userDets = response;
-				BlogPostService.getBlogDataBlogPost($routeParams.blogId)
+				BlogPostService.getBlogDataOrderByBloglink($routeParams.blogId)
 					.then(function(response){
 						 var list = response;
 						vm.blogdets = response[0];
@@ -58,7 +58,8 @@ function BlogDetsController($firebaseArray, UserService, BlogPostService, $rootS
 						}else{
 							vm.showReviewerBtns = false;
 							if(vm.blogdets.approvalStatus == 'pending'){
-								UserService.getBlogDetReviewer(vm.blogdets.reviewerId)
+								//Get Reviewer Data
+								UserService.getUserDetsOrderByUID(vm.blogdets.reviewerId)
 									.then(function(response){
 										vm.reviewerDets = response;
 										vm.showReviewer = true;
@@ -95,39 +96,11 @@ function BlogDetsController($firebaseArray, UserService, BlogPostService, $rootS
     };
 
 	function changeMyReviewer(){
-		/* vm.userRef = firebase.database().ref().child('/users').orderByChild('rank').equalTo('reviewer');
-		vm.userData = $firebaseArray(vm.userRef);
-		vm.userData.$loaded()
-            .then(function(snapshot){
-				vm.reviewer = vm.shuffleUsers(angular.copy(snapshot), vm.currentUser.uid, vm.reviewerDets.uid);
-				
-				// Updating new Reviewer
-				vm.rootRef = firebase.database().ref().child('/blog-post').orderByChild('bloglink').equalTo($routeParams.blogId);
-				vm.blogdata = $firebaseArray(vm.rootRef);
-				vm.blogdata.$loaded()
-					.then(function(snapshot){
-						var list = snapshot;
-						list[0].reviewerId = vm.reviewer.uid;
-						list.$save(0).then(function(ref) {
-							alert("Reviewer Modified");
-							vm.reviewerDets = vm.reviewer;
-						})
-						.catch(function(err){
-							console.log("blog update error: ", err);
-						});
-					})
-					.catch(function(err){
-						console.log(err)
-					});
-			})
-			.catch(function(err){
-				console.log(err);
-			}); */
 			UserService.getReviewerOrderByRank('reviewer')
 				.then(function(response){
 					vm.reviewer = vm.shuffleUsers(angular.copy(response), vm.currentUser.uid, vm.reviewerDets.uid);
 					// Updating new Reviewer
-					BlogPostService.getBlogDataBlogPost($routeParams.blogId)
+					BlogPostService.getBlogDataOrderByBloglink($routeParams.blogId)
 						.then(function(response){
 							var list = response;
 							list[0].reviewerId = vm.reviewer.uid;
@@ -141,24 +114,7 @@ function BlogDetsController($firebaseArray, UserService, BlogPostService, $rootS
 						})
 						.catch(function(error){
 							console.log(error);
-						})
-					/* vm.rootRef = firebase.database().ref().child('/blog-post').orderByChild('bloglink').equalTo($routeParams.blogId);
-					vm.blogdata = $firebaseArray(vm.rootRef);
-					vm.blogdata.$loaded()
-						.then(function(snapshot){
-							var list = snapshot;
-							list[0].reviewerId = vm.reviewer.uid;
-							list.$save(0).then(function(ref) {
-								alert("Reviewer Modified");
-								vm.reviewerDets = vm.reviewer;
-							})
-							.catch(function(err){
-								console.log("blog update error: ", err);
-							});
-						})
-						.catch(function(err){
-							console.log(err)
-						}); */
+						});
 				})
 				.catch(function(error){
 					console.log(error);
@@ -214,13 +170,17 @@ function BlogDetsController($firebaseArray, UserService, BlogPostService, $rootS
             "cmntdate": dt.getTime()
 		};
 
-        vm.comments.$add(commentData);
-        vm.commentdet = null;
-        vm.showcommentSection = false;
+		BlogCommentService.postComment(commentData, vm.blogid)
+			.then(function(response){
+				vm.commentdet = null;
+				vm.showcommentSection = false;
+			})
+			.catch(function(error){
+				console.log(error);
+			});
     };
 
     function writeAComment(){
-        console.log($rootScope.user);
         if(vm.user){
             vm.showcommentSection = true;
             $timeout(function(){
