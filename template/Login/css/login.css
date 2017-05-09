@@ -46,11 +46,11 @@
 }
 
 .button p{font-size: 18px;}
-.button span {position: absolute;left: 0;width: 50px;height: 38px; text-align: center;padding-top: 3px  ;font-size:30px;border-right: 1px solid  rgba(0,0,0,0.15);text-decoration: none;}
+.button span {position: absolute;left: 0;width: 40px;height: 38px; text-align: center;padding-top: 3px  ;font-size:30px;border-right: 1px solid  rgba(0,0,0,0.15);text-decoration: none;}
 
 .button.twitter {background: #00acee; max-width: 180px;margin:10px auto;}
 .button.facebook {background: #3b5998; max-width: 180px;margin:10px auto;}
-.button.google{background: #db4a39; max-width: 180px;margin:10px auto;}
+.button.google{background: #db4a39; max-width: 180px;margin:10px auto;padding-left: 50px;}
 .button.linkedin {background: #0e76a8; max-width: 180px;margin:10px auto;}
 
 .login-form input{ font-family: 'brandon_grotesque_regularRg'; border: none;box-shadow: none;border-bottom: solid 1px #ececec;border-radius: 0; padding-left: 0;font-size: 16px; transition-property: border-bottom; transition-duration: 0.2s; transition-delay: 0.1s; transition-timing-function: linear; margin-top:25px;}

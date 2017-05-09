@@ -39,7 +39,14 @@ body{font-family: 'brandon_grotesque_regularRg'; font-size: 12px; background: rg
 .navbar-default .navbar-toggle .icon-bar, .navbar-default .navbar-toggle:focus .icon-bar, .navbar-default .navbar-toggle:hover .icon-bar{background: #fff;}
 .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover{background: none;}
 .navbar-techBlog .navbar-nav>li>a{padding: 5px 10px;}
-
+.fa-google:before {
+    content: "";
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_google.png) 6px 6px no-repeat;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 0;
+}
 /* Custom, iPhone Retina */ 
 @media(max-width:320px){
     body {  
